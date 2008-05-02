@@ -1,6 +1,7 @@
 
 
 
+
 inon.fst: ../bin/inon.fst
 ../bin/inon.fst: ../bin/non.fst ../bin/non-lex.save
 	@echo
@@ -82,13 +83,17 @@ non-lex.save: ../bin/non-lex.save
 	@rm -f 	../tmp/non-lex-script
 
 non.lexc: ../bin/non.lexc
-../bin/non.lexc: non-lex.txt
+../bin/non.lexc: non-lex.txt adj-non-lex.txt noun-non-lex.txt \
+	verb-non-lex.txt propernoun-non-lex.txt
 	@echo
 	@echo "*** Building non.lexc ***" ;
 	@echo
 	@perl tagconv.pl < non-lex.txt > ../bin/non.lexc
-
+	@perl tagconv.pl < adj-non-lex.txt >> ../bin/non.lexc
+	@perl tagconv.pl < noun-non-lex.txt >> ../bin/non.lexc
+	@perl tagconv.pl < verb-non-lex.txt >> ../bin/non.lexc
+	@perl tagconv.pl < propernoun-non-lex.txt >> ../bin/non.lexc
 
 make clean:
-	@rm -rf ../bin/*fst ../bin/lexc ../bin/save
+	@rm -rf ../bin/*fst ../bin/*lexc ../bin/*save
 
