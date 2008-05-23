@@ -1,6 +1,16 @@
 
 
 
+XFST = xfst -utf8
+LEXC = lexc -utf8
+TWOLC = twolc -utf8
+
+ifeq (victorio.uit.no, $(shell hostname))
+XFST = /opt/sami/xerox/c-fsm/ix86-linux2.6-gcc3.4/bin/fst -utf8
+LEXC = /opt/sami/xerox/bin/lexc -utf8
+TWOLC = /opt/sami/xerox/bin/twolc -utf8
+endif
+
 
 inon.fst: ../bin/inon.fst
 ../bin/inon.fst: ../bin/non.fst ../bin/non-lex.save
@@ -11,7 +21,7 @@ inon.fst: ../bin/inon.fst
 	invert net \n\
 	save stack ../bin/inon.fst \n\
 	quit \n" > /tmp/inon-fst-script
-	@xfst -utf8 < /tmp/inon-fst-script
+	$(XFST) < /tmp/inon-fst-script
 	@rm -f /tmp/inon-fst-script
 
 
@@ -25,7 +35,7 @@ non.fst: ../bin/non.fst
 	@\"../bin/caseconv.fst\" .o. @\"../bin/spellrelax.fst\" ; \n\
 	save stack ../bin/non.fst \n\
 	quit \n" > /tmp/non-fst-script
-	@xfst -utf8 < /tmp/non-fst-script
+	$(XFST) < /tmp/non-fst-script
 	@rm -f /tmp/non-fst-script
 
 
@@ -40,7 +50,7 @@ spellrelax.fst: ../bin/spellrelax.fst
 	@printf "read regex < spellrelax.regex \n\
 	save stack ../bin/spellrelax.fst \n\
 	quit \n" > ../../tmp/spellrelax-sma-script
-	@xfst -utf8 < ../../tmp/spellrelax-sma-script
+	$(XFST) < ../../tmp/spellrelax-sma-script
 	@rm -f ../../tmp/spellrelax-sma-script
 
 
@@ -52,7 +62,7 @@ caseconv.fst: ../bin/caseconv.fst
 	@printf "read regex < case.regex \n\
 	save stack ../bin/caseconv.fst \n\
 	quit \n" > /tmp/caseconv-script
-	@xfst -utf8 < /tmp/caseconv-script
+	$(XFST) < /tmp/caseconv-script
 	@rm -f /tmp/caseconv-script
 
 
@@ -66,7 +76,7 @@ allcaps.fst: ../bin/allcaps.fst
 	@printf "source allcaps.regex \n\
 	save stack ../bin/allcaps.fst \n\
 	quit \n" > /tmp/tok-script
-	@xfst -utf8 < /tmp/tok-script
+	$(XFST) < /tmp/tok-script
 	@rm -f /tmp/tok-script
 
 
@@ -79,7 +89,7 @@ non-lex.save: ../bin/non-lex.save
 	printf "read lexc < ../bin/non.lexc \n\
 	save ../bin/non-lex.save \n\
 	quit \n" > ../tmp/non-lex-script
-	@xfst -utf8 < ../tmp/non-lex-script
+	$(XFST) < ../tmp/non-lex-script
 	@rm -f 	../tmp/non-lex-script
 
 non.lexc: ../bin/non.lexc
