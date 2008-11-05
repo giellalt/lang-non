@@ -1,7 +1,8 @@
 
 LEXICON Propernouns
 
-
+Miðgarð+noun+prop:Miðgarð # "" ;
+Valhǫll+noun+prop:Valhǫll # "" ;
 Arinbjǫrn+noun+prop:Arinbjǫrn  # "" ;
 Auðun+noun+prop:Auðun  # "" ;
 Aðalból+noun+prop:Aðalból  # "" ;

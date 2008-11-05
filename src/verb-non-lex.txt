@@ -29050,6 +29050,7 @@ líka+pres_part+nom+pl+neut:líkandi  # "'please'" ;
 líka+pres_part+acc+pl+neut:líkandi  # "'please'" ;
 líka+pres_part+gen+pl+neut:líkandi  # "'please'" ;
 líka+pres_part+dat+pl+neut:líkundum  # "'please'" ;
+lofa+verb+inf:lofa  # "'praise'" ;
 lofa+verb+1+sg+pres+indic:lofa  # "'praise'" ;
 lofa+verb+2+sg+pres+indic:lofar  # "'praise'" ;
 lofa+verb+3+sg+pres+indic:lofar  # "'praise'" ;

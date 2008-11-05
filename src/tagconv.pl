@@ -23,6 +23,7 @@ s/\+cons-stem//g ;
 s/\+dat/\+Dat/g ;
 s/\+def/\+Def/g ;
 s/\+dem/\+Dem/g ;
+s/\+det/\+Det/g ;
 s/\+du/\+Du/g ;
 s/\+fem/\+Fem/g ;
 s/\+gen/\+Gen/g ;

@@ -13,6 +13,7 @@ Multichar_Symbols
 +cons-stem
 +dat
 +def
++det
 +du
 +fem
 +gen
@@ -64,6 +65,7 @@ Verbs ;
 Adjectives ;
 Propernouns ;
 Closed ;
+Punctuation ;
 
 LEXICON Closed
 
@@ -102,6 +104,8 @@ du+pron+2+du+nom:þit  # "you two" ;
 þér+pron+2+pl+nom:þér  # "you (pl. nom.)" ;
 hann+pron+3+sg+masc+nom:hann  # "" ;
 hann+pron+3+sg+masc+acc:hann  # "" ;
+hann+pron+3+sg+masc+nom:han  # "" ;
+hann+pron+3+sg+masc+acc:han  # "" ;
 hann+pron+3+sg+masc+gen:hans  # "" ;
 hann+pron+3+sg+masc+dat:honum  # "" ;
 hon+pron+3+sg+fem+nom:hon  # "" ;
@@ -227,6 +231,7 @@ viðr+prep:viðr  # "alt form of við" ;
 ór+prep:ór  # "w. dat out of, from, of, using (material); vera ór = be made of; þar or = out of it" ;
 út+adv:út  # "out, from abroad; fara út í lǫnd = go abroad" ;
 þar+adv:þar # "there" ;
+þá+adv:þá # "when" ;
 
 hverr+interrog+nom+masc+fem:hverr  # "" ;
 hverr+interrog+acc+masc+fem:hvern  # "" ;
@@ -407,45 +412,45 @@ fjórir+neut+dat:fjórum  # "four" ;
 fjórir+neut+acc:fjógur  # "four" ;
 adv:heim  # "home; to(wards) the house" ;
 adv:saman  # "together" ;
-engi+masc+nom+sg:engi  # "no, none" ;
-engi+masc+acc+sg:engan  # "no, none" ;
-engi+masc+gen+sg:engis  # "no, none" ;
-engi+masc+dat+sg:engum  # "no, none" ;
-engi+masc+nom+pl:engir  # "no, none" ;
-engi+masc+acc+pl:enga  # "no, none" ;
-engi+masc+gen+pl:engra  # "no, none" ;
-engi+masc+dat+pl:engum  # "no, none" ;
-engi+fem+nom+sg:engi  # "no, none" ;
-engi+fem+acc+sg:enga  # "no, none" ;
-engi+fem+gen+sg:engrar  # "no, none" ;
-engi+fem+dat+sg:engri  # "no, none" ;
-engi+fem+nom+pl:engar  # "no, none" ;
-engi+fem+acc+pl:engar  # "no, none" ;
-engi+fem+gen+pl:engra  # "no, none" ;
-engi+fem+dat+pl:engum  # "no, none" ;
-engi+neut+nom+sg:ekki  # "no, none" ;
-engi+neut+acc+sg:ekki  # "no, none" ;
-engi+neut+gen+sg:engis  # "no, none" ;
-engi+neut+dat+sg:engu  # "no, none" ;
-engi+neut+nom+pl:engi  # "no, none" ;
-engi+neut+acc+pl:engi  # "no, none" ;
-engi+neut+gen+pl:engra  # "no, none" ;
-engi+neut+dat+pl:engum  # "no, none" ;
-engi+masc+acc+sg:engi  # "no, none" ;
-engi+masc+gen+sg:enskis  # "no, none" ;
-engi+neut+gen+sg:enskis  # "no, none" ;
-engi+masc+nom:báðir  # "both" ;
-engi+masc+acc:báða  # "both" ;
-engi+masc+gen:beggja  # "both" ;
-engi+masc+dat:báðum  # "both" ;
-engi+fem+nom:báðar  # "both" ;
-engi+fem+acc:báðar  # "both" ;
-engi+fem+gen:beggja  # "both" ;
-engi+fem+dat:báðum  # "both" ;
-engi+neut+nom:bæði  # "both" ;
-engi+neut+acc:bæði  # "both" ;
-engi+neut+gen:beggja  # "both" ;
-engi+neut+dat:báðum  # "both" ;
+engi+det+masc+nom+sg:engi  # "no, none" ;
+engi+det+masc+acc+sg:engan  # "no, none" ;
+engi+det+masc+gen+sg:engis  # "no, none" ;
+engi+det+masc+dat+sg:engum  # "no, none" ;
+engi+det+masc+nom+pl:engir  # "no, none" ;
+engi+det+masc+acc+pl:enga  # "no, none" ;
+engi+det+masc+gen+pl:engra  # "no, none" ;
+engi+det+masc+dat+pl:engum  # "no, none" ;
+engi+det+fem+nom+sg:engi  # "no, none" ;
+engi+det+fem+acc+sg:enga  # "no, none" ;
+engi+det+fem+gen+sg:engrar  # "no, none" ;
+engi+det+fem+dat+sg:engri  # "no, none" ;
+engi+det+fem+nom+pl:engar  # "no, none" ;
+engi+det+fem+acc+pl:engar  # "no, none" ;
+engi+det+fem+gen+pl:engra  # "no, none" ;
+engi+det+fem+dat+pl:engum  # "no, none" ;
+engi+det+neut+nom+sg:ekki  # "no, none" ;
+engi+det+neut+acc+sg:ekki  # "no, none" ;
+engi+det+neut+gen+sg:engis  # "no, none" ;
+engi+det+neut+dat+sg:engu  # "no, none" ;
+engi+det+neut+nom+pl:engi  # "no, none" ;
+engi+det+neut+acc+pl:engi  # "no, none" ;
+engi+det+neut+gen+pl:engra  # "no, none" ;
+engi+det+neut+dat+pl:engum  # "no, none" ;
+engi+det+masc+acc+sg:engi  # "no, none" ;
+engi+det+masc+gen+sg:enskis  # "no, none" ;
+engi+det+neut+gen+sg:enskis  # "no, none" ;
+engi+det+masc+nom:báðir  # "both" ;
+engi+det+masc+acc:báða  # "both" ;
+engi+det+masc+gen:beggja  # "both" ;
+engi+det+masc+dat:báðum  # "both" ;
+engi+det+fem+nom:báðar  # "both" ;
+engi+det+fem+acc:báðar  # "both" ;
+engi+det+fem+gen:beggja  # "both" ;
+engi+det+fem+dat:báðum  # "both" ;
+engi+det+neut+nom:bæði  # "both" ;
+engi+det+neut+acc:bæði  # "both" ;
+engi+det+neut+gen:beggja  # "both" ;
+engi+det+neut+dat:báðum  # "both" ;
 nakkvarr+masc+nom+sg:nakkvarr  # "some, any" ;
 nakkvarr+masc+acc+sg:nakkvarn  # "some, any" ;
 nakkvarr+masc+gen+sg:nakkvars  # "some, any" ;
