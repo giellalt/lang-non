@@ -1,7 +1,7 @@
-A.   LOKI AND SVAÐILFARI
+# A.   LOKI AND SVAÐILFARI
 
 Þat var snimma í ǫndverða bygð goðanna, þá er goðin
-hǫfðu sett Miðgarð ok gǫrt Valhǫ́ll, þá kom þar smiðr
+hǫfðu sett Miðgarð ok gǫrt Valhǫll, þá kom þar smiðr
 nǫkkurr ok bauð at gøra þeim borg á þrim misserum svá
 góða at trú ok ørugg væri fyrir bergrisum ok hrímþursum,
 þótt þeir kœmi inn um Miðgarð; en hann mælti sér þat til 
@@ -59,7 +59,7 @@ En Loki hafði þá ferð haft til Svaðilfara at nǫkkuru síðar
 bar hann fyl. Þat var grátt ok hafði átta fœtr, ok er sá hestr
 beztr með goðum ok mǫnnum.
 
-B.   FREY AND SKÍRNIR
+# B.   FREY AND SKÍRNIR
 
 Þat var einn dag at Freyr hafði gengit í Hliðskjálf ok sá
  of heima alla; en er hann leit í norðrætt, þá sá hann á einum
@@ -102,7 +102,7 @@ en sjá hálf hýnótt.'
 Þessi sǫk var til, er Freyr var svá vápnlauss, er hann 
 barðisk við Belja, ok drap hann með hjartarhorni.
 
-C.   SKAÐI'S MARRIAGE
+# C.   SKAÐI'S MARRIAGE
 
 Skaði, dóttir Þjaza jǫtuns, tók hjálm ok brynju ok ǫll
 hervápn ok ferr til Asgarðs at hefna fǫður síns. En Æsir
@@ -133,7 +133,7 @@ morgin hverjan már.'
 mjǫk á skíðum ok með boga ok skýtr dýr. Hon heitir
 ǫndurgoð eða ǫndurdís.
 
-D.   ÞÓR AND ÚTGARÐA-LOKI
+# D.   ÞÓR AND ÚTGARÐA-LOKI
 
     Þat er upphaf þessa máls, at Ǫku-Þórr fór með hafra sína
 ok reið, ok með honum sá Áss er Loki heitir. Koma þeir at
@@ -152,7 +152,7 @@ upp ok klæddi sik, tók hamarinn Mjǫllni ok brá upp ok vígði
 
 
 
-1.123-156        Þór and Útgarða-Loki	9
+# 1.123-156        Þór and Útgarða-Loki	9
 
 hafrstǫkurnar.   Stóðu þá upp hafrarnir, ok var þá annarr
 haltr eptra fœti. Þat fann Þórr, ok talði at bóndinn eða hans
@@ -472,7 +472,7 @@ ok ætlask þá fyrir at brjóta borgina.  Þá sér hann þar vǫllu
 víða ok fagra, en enga borg.   Snýsk hann þá aptr ok ferr
 leið sína, til þess er hann kom aptr í Þrúðvanga.
 
-E.   THE DOOM OF THE GODS
+# E.   THE DOOM OF THE GODS
 
 Þá  mælti  Gangleri, 'Hver tíðendi  eru  at segja frá um 
 ragnarøkr? Þess hefi ek eigi fyrr heyrt getit.'
@@ -608,9 +608,9 @@ sá's þeim vǫllr vitaðr.
 
 
 
-II VǪLSUNGA SAGA
+# II VǪLSUNGA SAGA
 
-THE VENGEANCE OF SIGMUND
+# THE VENGEANCE OF SIGMUND
 
 Siggeirr konungr átti tvá sonu við konu sinni, ok er frá því
 sagt, þá er inn ellri sonr hans er tíu vetra, at Signý sendir hann
@@ -626,7 +626,7 @@ brauðgorðina. Nú spyrr Sigmundr hvárt búit sé brauðit.
 
 
 
-22	Vǫlsunga saga	2.11-44
+# 22	Vǫlsunga saga	2.11-44
 
 Hann segir, 'Eigi þorða ek at taka mjǫlbelginn, fyrir því at
 þar lá nǫkkut kykt í mjǫlinu.'
@@ -666,7 +666,7 @@ Sigmundr var svá mikill fyrir sér at hann mátti eta eitr, svá
 
 
 
-2.45-78        The Vengeance of Sigmund	23
+# 2.45-78        The Vengeance of Sigmund	23
 
 at hann skaðaði ekki, en Sínfjǫtla hlýddi þat, at eitr kœmi 
 útan á hann, en eigi hlýddi honum at eta þat né drekka.
@@ -706,7 +706,7 @@ Sinfjǫtli  lét  sér  ekki  feilask  ok  bregðr  sverði  ok  drepr
 
 
 
-24	Vǫlsunga saga                2.79-112
+# 24	Vǫlsunga saga                2.79-112
 
 hvárttveggja barnit ok kastar þeim innar í hǫllina fyrir Siggeir
  konung.
@@ -746,7 +746,7 @@ Sígmundr hjǫrvi     ok Sinfjǫtli;
 
 
 
-2.113-138     The Vengeance of Sigmund	25
+# 2.113-138     The Vengeance of Sigmund	25
 
 Ok nú eru þeir lausir báðir saman í hauginum ok rísta
 bæði grjót ok torf ok komask svá út ór hauginum.   Þeir
@@ -782,10 +782,10 @@ konungr ok ágætr, vitr ok stórráðr.
 
 
 
-III	HRÓLFS SAGA KRAKA
+# III	HRÓLFS SAGA KRAKA
 
 
-BǪÐVAR BJARKI AT THE COURT OF KING HRÓLF
+# BǪÐVAR BJARKI AT THE COURT OF KING HRÓLF
 
 Síðan fór Bǫðvarr leið sína til Hleiðargarðs. Hann kømr
 til konungs atsetu. Bǫðvarr leiðir síðan hest sinn á stall hjá
@@ -814,7 +814,7 @@ tók hann upp síðan ok bar hann út ór hǫllinni ok til vatns
 
 
 
-28	Hrólfs saga Kraka              3.24-40
+# 28	Hrólfs saga Kraka              3.24-40
 
 nǫkkurs sem þar var í nánd, ok gáfu fáir at þessu gaum, ok
  þó hann upp allan.
@@ -876,7 +876,7 @@ vill hann þat skipa sem hinn hafði áðr. Hann kippir upp
 
 
 
-30	Hrólfs saga Kraka             3.75-108
+# 30	Hrólfs saga Kraka             3.75-108
 
  þar niðr ok innar í hǫllinni en þeim var skipat. Heldr þótti
 mǫnnum ódælt við Bǫðvar, ok er þeim hinn mesti íhugi at
@@ -955,7 +955,7 @@ háttat'.   Konungr mælti,  'Hvat má vita,  nema fleira hafi
 
 
 
-32	Hrólfs saga Kraka           3.143-156
+# 32	Hrólfs saga Kraka           3.143-156
 
 skipzk   um   hagi   þína   en   sjá   þykkir?    En   fæstir   menn
 þykkjask þik kenna, at þú sér inn sami maðr.   Nú tak við
@@ -978,11 +978,11 @@ frá þessu; skaltu heita eptir sverðinu Gullinhjalta."
 
 
 
-IV ARI ÞORGILSSON (1067-1148)
+# IV ARI ÞORGILSSON (1067-1148)
 
-ARI'S LIBELLUS ISLANDORUM
+# ARI'S LIBELLUS ISLANDORUM
 
-Prologue
+# Prologue
 
 Íslendingabók gørða ek fyrst biskupum várum Þorláki ok
 Katli, ok sýnda ek bæði þeim ok Sæmundi presti. En með
@@ -992,7 +992,7 @@ ek þessa of it sama far, fyr útan Ættar-tǫlu ok Konunga-ævi.
 á þessi en á þeirri. En hvatki er missagt er í frœðum þessum,
 þá er skylt at hafa þat heldr er sannara reynisk.
 
-Frá Íslands bygð. A.D. 870
+Frá Íslands bygð. A.D. 870.
 
 Ísland bygðisk fyrst ór Norvegi á dǫgum Haralds ins Hár-
 fagra, Hálfdanarsonar ins Svarta, í þann tíð -- at ætlun ok
@@ -1031,7 +1031,7 @@ maðr skyldi gjalda konungi hálfa mǫrk, sá er fœri á miðli
 Norvegs ok Íslands, nema konur eða þeír menn er hann
 næmi frá. Svá sagði Þorkell oss Gellisson.
 
-Frá Grœnlands bygð. A.D. 986
+Frá Grœnlands bygð. A.D. 986.
 
 Land þat er kallat er Grœnland fannsk ok bygðisk af
 Íslandi.   Eiríkr inn Rauði hét maðr Breiðfirzkr, er fór út 
@@ -1052,7 +1052,7 @@ Frá því er Kristni kom á Ísland. A.D. 1000
 
 
 
-36	Ari Þorgilsson                 4.53-85
+# 36	Ari Þorgilsson                 4.53-85
 
 Hárfagra, kom Kristni í Norveg ok á Ísland.   Hann sendi
 hingat til lands prest þann er hét Þangbrandr, ok hér kendi
@@ -1130,7 +1130,7 @@ miðli; enda helt friðr sá meðan þeir lifðu. 'En nú þykkir mér
 
 
 
-38	Ari Þorgilsson              4.120-138
+# 38	Ari Þorgilsson              4.120-138
 
  vilja í gegn gangask; ok miðlum svá mál á miðli þeira, at
 hvárirtveggju hafi nakkvat síns máls, ok hǫfum allir ein lǫg
@@ -1160,9 +1160,9 @@ tali.
 
 
 
-THE NORSE DISCOVERY OF AMERICA
+# THE NORSE DISCOVERY OF AMERICA
 
-A.   THE DISCOVERY OF AMERICA BY BJARNI HERJÓLFSSON, A.D. 986
+# A.   THE DISCOVERY OF AMERICA BY BJARNI HERJÓLFSSON, A.D. 986
 
 Herjólfr var Bárðarson Herjólfssonar; hann var frændi
 Ingólfs landnámamanns. Þeim Herjólfi gaf Ingólfr land á
@@ -1195,7 +1195,7 @@ hvat er hann bærisk fyrir, en hann svarar at hann ætlaði at
 
 
 
-42	Grœnlendinga Þáttr             5.28-61
+# 42	Grœnlendinga Þáttr             5.28-61
 
 halda siðvenju sinni ok þiggja at fǫður sínum vetrvist, 'ok vil
 ek halda skipinu til Grœnlands, ef þér vilið mér fylgð veita.'
@@ -1235,7 +1235,7 @@ sigla meira en bæði dygði vel skipi þeira ok reiða. Sigldu
 
 
 
-5.62-91	Bjarni's Voyage                       43
+# 5.62-91	Bjarni's Voyage                       43
 
 nú fjogur dœgr; þá sá þeir land hit fjórða. Þá spurðu þeir
 Bjarna hvárt hann ætlaði þetta vera Grœnland eðr eigi.
@@ -1248,7 +1248,7 @@ Bjarni nú til fǫður síns, ok hættir nú siglingu ok er með
 fǫður sínum meðan Herjólfr lifði, ok síðan bjó hann þar eptir 
 fǫður sinn.
 
-B.   LEIF EIRfKSSON SIGHTS AMERICA	 A.D.   1OOO
+# B.   LEIF EIRfKSSON SIGHTS AMERICA	 A.D.   1OOO
 
 Eiríkr átti þá konu er Þjóðhildr hét ok við henni tvá sonu.
 Hét annarr Þorsteinn, en annarr Leifr; þeir váru báðir
@@ -1274,7 +1274,7 @@ vaxinh; þar váru þau tré er mǫsurr heita, ok hǫfðu þeir af
 
 
 
-44	Þorfinns saga 5.92-121
+# 44	Þorfinns saga 5.92-121
 
 lǫgð. Leifr fann menn á skipflaki ok flutti heim með sér.
 Sýndi hann í því hína mesta stórmensku ok drengskap sem
@@ -1292,7 +1292,7 @@ menn sem við Kristni tóku. Þjóðhildr vildi ekki samræði við
  Eirlk síðan hon tók trú, en honum var þetta mjǫk móti
 skapi.
 
-C.   LEIF'S VOYAGE ACCORDING TO FLATEYJARBÓK
+# C.   LEIF'S VOYAGE ACCORDING TO FLATEYJARBÓK
 
 Þat er nú þessu næst at Bjarni Herjólfsson kom útan af
 Grœnlandi á fund Eiríks jarls, ok tók jarl við honum vel.
@@ -1313,7 +1313,7 @@ af þeim frændum; ok þetta lét Eiríkr eptir Leifi, ok ríðr
 
 
 
-5.122-155	Leif's Voyage                        45
+# 5.122-155	Leif's Voyage                        45
 
 heiman þá er þeir eru at því búnir. Ok var þá skamt at fara
 til skipsins, drepr hestrinn fœti, sá er Eiríkr reið, ok fell hann
@@ -1353,7 +1353,7 @@ skipinu.  En þeim var svá mikil forvitni á at fara tíl landsins
 
 
 
-46	Grœnlendinga Þáttr 5.156-189
+# 46	Grœnlendinga Þáttr 5.156-189
 
 at þeir nentu eigi þess at bíða at sjór felli undir skip þeira,
 ok runnu til lands þar er á ein fell ór vatni einu. En þegar
@@ -1393,7 +1393,7 @@ ok fráskila fǫruneytínu?'  Hann talaði þá fyrst lengi á Þýzku
 
 
 
-5.190-220	Leif's Voyage                          47
+# 5.190-220	Leif's Voyage                          47
 
 ok skaut marga vega augunum ok gretti sik, en þeir skildu 
 eigi hvat er hann sagði.  Hann mælti þá á Norrœnu, er stund
@@ -1412,7 +1412,7 @@ sigldu brott. Ok gaf Leifr nafn landinu eptir landkostum ok
 kallaði Vínland. Sigla nú síðan í haf ok gaf þeim vel byri
 þar til þeir sá Grœnland ok fjǫll undir jǫklum. 
 
-D.   THE EXPEDITION OF ÞORFINN KARLSEFNI (1007-11)
+# D.   THE EXPEDITION OF ÞORFINN KARLSEFNI (1007-11)
 
 Á því léku miklar umrœður í Brattahlíð at menn skyldu
 leita Vínlands ins góða, ok var sagt at þangat mundi vera at
@@ -1433,7 +1433,7 @@ vinsældum horfinn, en þó hafði Eiríkr léngi tal af honum
 
 
 
-48	Þorfinns saga 5.221-254
+# 48	Þorfinns saga 5.221-254
 
 haldit. Hann var á skipi með þeim Þorvaldi, því at honum
 var víða kunnigt í óbygðum. Þeir hǫfðu þat skip er Þorbjǫrn
@@ -1550,7 +1550,7 @@ knarrar skeið in breiðu,
 
 
 
-5.322-354	Þorfinn's Voyage                       51
+# 5.322-354	Þorfinn's Voyage                       51
 
 meðan bilstyggvir byggva
 bellendr ok hval vella
@@ -1589,7 +1589,7 @@ skálarnir nær meginlandinu, en sumir nær vatninu. Nú váru
 
 
 
-52	Þorfinns saga               5.355-388
+# 52	Þorfinns saga               5.355-388
 
  þeir þar þann vetr.  Þar kom alls engi snjár, ok allr fénaðr
 gekk þar úti sjálfala.
@@ -1629,7 +1629,7 @@ menn, er mér þœtti líkligt at þér mættið drepa þá svá sem
 
 
 
-5.389-422	Þorfinn's Voyage                       53
+# 5.389-422	Þorfinn's Voyage                       53
 
 búfé?  Ok ef ek hefða vápn, þœtti mér sem ek munda betr
 berjask en einnhverr yðvar.'   Þeir gáfu engan gaum hvat 
@@ -1707,7 +1707,7 @@ hittu   Markland   ok  fundu   Skrælinga  fimm,   ok  var  einn
 
 
 
-5.456-487	Þorfinn's Voyage                      55
+# 5.456-487	Þorfinn's Voyage                      55
 
 sín sveinana, en hinir kómusk undan ok sukku í jǫrð niðr.
 En sveinana hǫfðu þeir með sér ok kendu þeim mál ok váru
@@ -1721,7 +1721,7 @@ klæðum ok optu hátt ok báru stangir ok fóru með flíkr. Þat
 Nú kómu þeir til Grœnlands ok eru með Eiríki Rauða um 
 vetrinn.
 
-E. THE GREENLAND PROPHETESS
+# E. THE GREENLAND PROPHETESS
 
 Í þenna tíma var hallæri mikit á Grœnlandi. Hǫfðu menn
 fengit lítit fang, þeir er í veiðiferðir hǫfðu farit, en sumir ekki
@@ -1748,7 +1748,7 @@ mikill, ok varðveitti hon þar í taufr sín, þau er hon þurfti til
 
 
 
-56	Þorfinns saga 5.488-521
+# 56	Þorfinns saga 5.488-521
 
 fróðleiks at hafa; hon hafði á fótum kálfskinnsskó loðna, ok
 í þvengi langa, ok á tinknappar miklir á endunum; hon
@@ -1820,9 +1820,9 @@ hindrvitni var framið.
 
 
 
-VI HRAFNKELS SAGA FREYSGOÐA
+# VI HRAFNKELS SAGA FREYSGOÐA
 
-CHAPTER I
+# CHAPTER I
 
 Þat var á dǫgum Haralds konungs ins hárfagra, Hálfdanar
 sonar ins svarta, Guðrøðar sonar veiðikonungs, Hálfdanar
@@ -1843,7 +1843,7 @@ ok bjó þar til elli. En honum varð þar eptir geit ok hafr. Ok
 inn sama dag, sem Hallfreðr var í brott, hljóp skriða á húsin,
 ok týndusk þar þessir gripir, ok því heitir þat síðan í Geitdal.
 
-CHAPTER 2
+# CHAPTER 2
 
 Hrafnkell lagði þat í vanða sinn at ríða yfir á heiðar á sumarit.
 Þá var Jǫkulsdalr albyggðr upp at brúm. Hrafnkell reið upp 
@@ -1879,7 +1879,7 @@ leiðar fyrir ofan fell þau, er standa í Fljótsdalsheiði. Fekk hann
  þar þurrari leið ok lengri, ok heitir þar Hallfreðargata. Þessa
 leið fara þeir einir, er kunnugastir eru um Fljótsdalsheiði.
 
-CHAPTER 3
+# CHAPTER 3
 
 Bjarni hét maðr, er bjó at þeim bœ, er at Laugarhúsum heitir.
 Þat er í Hrafnkelsdal. Hann var kvángaðr ok átti tvá sonu við
@@ -1930,7 +1930,7 @@ lézk mikils við þurfa.
 
 
 
-62	Hrafnkels saga                6.87-120
+# 62	Hrafnkels saga                6.87-120
 
 Einarr kvazk eigi hirða, hvat hann ynni, hvárt sem þat væri
 þetta eða annat, en lézk tveggja missera bjǫrg hafa vilja.
@@ -2009,7 +2009,7 @@ Síðan gekk hann út ok sér Freyfaxa ok mælti við hann: 'Illa
 
 
 
-64	Hrafnkels saga              6.155-188
+# 64	Hrafnkels saga              6.155-188
 
  þykkir mér, at þú ert þann veg til gǫrr, fóstri minn, en heima
 hafðir þú vit þitt, er þú sagðir mér til, ok skal þessa hefnt
@@ -2049,7 +2049,7 @@ Hann kvazk fleiri menn hafa drepit en þenna einn. 'Er þér
 
 
 
-6.189-222	Hrafnkels saga                         65
+# 6.189-222	Hrafnkels saga                         65
 
 þat eigi ókunnigt, at ek vil engan mann fé bœta, ok verða menn
 þat þó svá gǫrt at hafa. En þó læt ek svá sem mér þykki þetta 
@@ -2128,7 +2128,7 @@ at þú ert hávaðamestr ór ætt várri. Sé ek nú, hvat sǫk horfir.'
 
 
 
-6.257-389	Hrafnkels saga                         67
+# 6.257-389	Hrafnkels saga                         67
 
 Sámr svarar: 'Hverju góðu ertu þá nær en áðr, þótt ek taka
 við þessu máli ok sém vit þá báðir hrakðir?'
@@ -2167,7 +2167,7 @@ fórsk honum því seinna, at hann átti lengri leið.
 
 
 
-68	Hrafnkels saga               6.290-321
+# 68	Hrafnkels saga               6.290-321
 
      Sámr tjaldar búð yfir sínum mǫnnum hvergi nær því, sem
 Austfirðingar eru vanir at tjalda, en nǫkkuru síðar kom
@@ -2189,7 +2189,7 @@ mikla áhyggju hafa þeir frændr, at þeir njóta hvárki svefns né
 matar, því at allir hǫfðingjar skárusk undan liðsinni við þá
 frændr, jafnvel þeir, sem þeir væntu, at þeim mundi lið veita.
 
-CHAPTER 4
+# CHAPTER 4
 
 Þat var einn morgin snimma, at Þorbjǫrn karl vaknar. Hann
  vekr Sám ok bað hann upp standa. 'Má ek ekki sofa.'
@@ -2247,7 +2247,7 @@ ok víðara um Vestfjǫrðu.'
 
 
 
-70	Hrafnkels saga               6.356-389
+# 70	Hrafnkels saga               6.356-389
 
 'Eru þér fleiri brœðrnir?' segir Sámr.
 'lnn þriði', segir Þorkell.
@@ -2287,7 +2287,7 @@ fótinn út undan fǫtunum fram á fótafjǫlina sakar ofrhita, er á
 
 
 
-6.390-423	Hrafnkels saga                         71
+# 6.390-423	Hrafnkels saga                         71
 
 er fœtinum. Gangi sá inn gamli maðr fyrir ok svá innar eptir 
 búðinni.  Mér sýnisk hann mjǫk hrymðr bæði at sýn ok elli.
@@ -2327,7 +2327,7 @@ mér þessu hefna.'
 
 
 
-72	Hrafnkels saga               6.424-457
+# 72	Hrafnkels saga               6.424-457
 
 hann at þér harðara en hann vildi, ok galt hann óskygnleika
  síns, en vænti sér af þér nǫkkurs trausts. Er þat nú drengskapr
