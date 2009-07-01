@@ -1,5 +1,5 @@
-
-
+# This is a makefile that builds the Old Norse morphological parsers
+# ******************************************************************
 
 XFST = xfst -utf8
 LEXC = lexc -utf8
@@ -26,8 +26,10 @@ inon.fst: ../bin/inon.fst
 
 
 non.fst: ../bin/non.fst
-../bin/non.fst: ../bin/non-lex.save ../bin/caseconv.fst ../bin/allcaps.fst \
-	../bin/spellrelax.fst
+../bin/non.fst: ../bin/non-lex.save \
+				../bin/caseconv.fst \
+				../bin/allcaps.fst \
+				../bin/spellrelax.fst
 	@echo
 	@echo "*** Building non.fst ***" ;
 	@echo
@@ -37,7 +39,6 @@ non.fst: ../bin/non.fst
 	quit \n" > /tmp/non-fst-script
 	$(XFST) < /tmp/non-fst-script
 	@rm -f /tmp/non-fst-script
-
 
 
 # This goal is to allow for i instead of ï, and for ä/æ and ö/ø mix
@@ -93,8 +94,12 @@ non-lex.save: ../bin/non-lex.save
 	@rm -f 	../tmp/non-lex-script
 
 non.lexc: ../bin/non.lexc
-../bin/non.lexc: non-lex.txt adj-non-lex.txt noun-non-lex.txt \
-	verb-non-lex.txt propernoun-non-lex.txt punct-non-lex.txt
+../bin/non.lexc: non-lex.txt \
+				 adj-non-lex.txt \
+				 noun-non-lex.txt \
+				 verb-non-lex.txt \
+				 propernoun-non-lex.txt \
+				 punct-non-lex.txt
 	@echo
 	@echo "*** Building non.lexc ***" ;
 	@echo
@@ -107,4 +112,3 @@ non.lexc: ../bin/non.lexc
 
 make clean:
 	@rm -rf ../bin/*fst ../bin/*lexc ../bin/*save
-
