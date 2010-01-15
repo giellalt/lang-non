@@ -27,14 +27,14 @@ inon.fst: ../bin/inon.fst
 
 non.fst: ../bin/non.fst
 ../bin/non.fst: ../bin/non-lex.save \
-				../bin/caseconv.fst \
+				../bin/inituppercase.fst \
 				../bin/allcaps.fst \
 				../bin/spellrelax.fst
 	@echo
 	@echo "*** Building non.fst ***" ;
 	@echo
 	@printf "read regex @\"../bin/non-lex.save\" .o. \
-	@\"../bin/caseconv.fst\" .o. @\"../bin/spellrelax.fst\" ; \n\
+	@\"../bin/inituppercase.fst\" .o. @\"../bin/spellrelax.fst\" ; \n\
 	save stack ../bin/non.fst \n\
 	quit \n" > /tmp/non-fst-script
 	$(XFST) < /tmp/non-fst-script
@@ -55,16 +55,16 @@ spellrelax.fst: ../bin/spellrelax.fst
 	@rm -f ../../tmp/spellrelax-sma-script
 
 
-caseconv.fst: ../bin/caseconv.fst
-../bin/caseconv.fst: case.regex
+inituppercase.fst: ../bin/inituppercase.fst
+../bin/inituppercase.fst: inituppercase.regex
 	@echo
-	@echo "*** Building caseconv.fst ***" ;
+	@echo "*** Building inituppercase.fst ***" ;
 	@echo
-	@printf "read regex < case.regex \n\
-	save stack ../bin/caseconv.fst \n\
-	quit \n" > /tmp/caseconv-script
-	$(XFST) < /tmp/caseconv-script
-	@rm -f /tmp/caseconv-script
+	@printf "read regex < inituppercase.regex \n\
+	save stack ../bin/inituppercase.fst \n\
+	quit \n" > /tmp/inituppercase-script
+	$(XFST) < /tmp/inituppercase-script
+	@rm -f /tmp/inituppercase-script
 
 
 # This goal depends on allcaps.regex
