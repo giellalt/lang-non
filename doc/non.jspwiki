@@ -1,18 +1,56 @@
 !!!Free and Open source Finnish analyser gtsvn-fi
 
-;Authors: Divvun and Giellatekno teams, Germanic Lexicon Project
+;Authors: Divvun and Giellatekno teams, Aajege, community members
 ;Software version: 2012
 ;Documentation license: GNU GFDL
 ;SVN Revision: $Revision: 68217 $
 ;SVN Date: $Date: 2013-01-16 11:31:33 +0200 (Wed, 16 Jan 2013) $
 
-!!!GTDivvun-non
+!!!GTSVN-sma
 
-This is free and open source Old Norse morphology, based on work by the
-Germanic Lexicon Project.
-
+This is free and open source South Sámi morphology.
 
 
+POS:
+ * +A = Adjective
+ * +Adv = Adverb
+ * +CC = Conjunct
+ * +CS = Subjunct
+ * +N =
+ * +Pr =
+ * +Pron =
+ * +Prop =
+ * +V =
+
+ * +CLB =
+ * +PUNCT =
+ * +LEFT =
+ * +RIGHT =
+
+ * +Interr = 
+
+Numerus:
+ * +1Sg  = 1. person singular
+ * +2Sg  = 2. person singular
+ * +3Sg  = 3. person singular
+ * +1Du  = 1. person dual
+ * +2Du  = 2. person dual
+ * +1Pl  = 1. person plural
+ * +2Pl  = 2. person plural
+ * +3Pl  = 3. person plural
+ * +3    = ?
+ * +Sg   = Singular
+ * +Pl   = Plural
+
+Case:
+
+Gender:
+
+Nominal inflection:
+
+Verbal inflection:
+
+Other:
 
 
 
@@ -24,21 +62,3 @@ Germanic Lexicon Project.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-There was no content!
