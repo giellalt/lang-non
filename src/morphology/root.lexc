@@ -2,62 +2,74 @@
 ! http://xixona.dlsi.ua.es/~fran/old_icelandic/index.php
 
 Multichar_Symbols
+
+!! POS:
++A     !!≈ * @CODE@ = Adjective
++Adv   !!≈ * @CODE@ = Adverb
++CC    !!≈ * @CODE@ = Conjunct
++CS    !!≈ * @CODE@ = Subjunct
++N     !!≈ * @CODE@ =
++Pr    !!≈ * @CODE@ =
++Pron  !!≈ * @CODE@ =
++Prop  !!≈ * @CODE@ =
++V     !!≈ * @CODE@ =
+
++CLB   !!≈ * @CODE@ =
++PUNCT !!≈ * @CODE@ =
++LEFT  !!≈ * @CODE@ =
++RIGHT !!≈ * @CODE@ =
+
++Dem
++Det
++Refl
++Rel
++Interr !!≈ * @CODE@ = 
+
+!! Numerus:
++1Sg !!= * @CODE@ = 1. person singular
++2Sg !!= * @CODE@ = 2. person singular
++3Sg !!= * @CODE@ = 3. person singular
++1Du !!= * @CODE@ = 1. person dual
++2Du !!= * @CODE@ = 2. person dual
++1Pl !!= * @CODE@ = 1. person plural
++2Pl !!= * @CODE@ = 2. person plural
++3Pl !!= * @CODE@ = 3. person plural
 +1
 +2
-+3
++3   !!= * @CODE@ = ?
++Sg  !!= * @CODE@ = Singular
++Pl  !!= * @CODE@ = Plural
 
+!! Case:
++Nom
 +Acc
-+A
-+Cmp
-+CC
-
-+Dat
-+Def
-+Det
-+Du
-+Fem
 +Gen
++Dat
 
-+Imp
+!! Gender:
++Fem
++Msc
++Neu
+
+!! Nominal inflection:
++Cmp
++Def
++Defkyn
++Superl
+
+!! Verbal inflection:
 +Imp
 +Ind
 +Inf
-+Imp
-
-
-+Msc
 +Middle
-
-+Neu
-+Nom
-+N
-
-+PrfPrc
-+Pl
 +PrfPrc
 +Prs
 +PrsPrc
 +Prt
-
-+Pron
-+PrfPrc
-+Refl
-+ráði
-+Sg
-
-
-
-
-
-
-
-+CS
 +Subj
 
-+V
-
-
-
+!! Other:
++IM
 
 LEXICON Root
 Nouns ;
