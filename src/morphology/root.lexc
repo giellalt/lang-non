@@ -6,6 +6,7 @@ Multichar_Symbols
 !! POS:
 +A     !!≈ * @CODE@ = Adjective
 +Adv   !!≈ * @CODE@ = Adverb
++Art   !!≈ * @CODE@ = Article
 +CC    !!≈ * @CODE@ = Conjunct
 +CS    !!≈ * @CODE@ = Subjunct
 +N     !!≈ * @CODE@ =
@@ -144,30 +145,30 @@ hon+Pron+3Sg+Fem+Dat:henni  # "" ;
 hann+Pron+3Sg+Msc+Gen:þeirra  # "" ;
 hon+Pron+3Sg+Fem+Gen:þeirra  # "" ;
 it+Pron+3Sg+Neu+Gen:þeirra  # "" ;
-inn+art+Sg+Msc+Nom:inn  # "the" ;
-inn+art+Sg+Msc+Acc:inn  # "the" ;
-inn+art+Sg+Msc+Gen:ins  # "the" ;
-inn+art+Sg+Msc+Dat:inum  # "the" ;
-inn+art+Pl+Msc+Nom:inir  # "the" ;
-inn+art+Pl+Msc+Acc:ina  # "the" ;
-inn+art+Pl+Msc+Gen:inna  # "the" ;
-inn+art+Pl+Msc+Dat:inum  # "the" ;
-in+art+Sg+Fem+Nom:in  # "the" ;
-in+art+Sg+Fem+Acc:ina  # "the" ;
-in+art+Sg+Fem+Gen:innar  # "the" ;
-in+art+Sg+Fem+Dat:inni  # "the" ;
-in+art+Pl+Fem+Nom:inar  # "the" ;
-in+art+Pl+Fem+Acc:inar  # "the" ;
-in+art+Pl+Fem+Gen:inna  # "the" ;
-in+art+Pl+Fem+Dat:inum  # "the" ;
-it+art+Sg+Neu+Nom:it  # "the" ;
-it+art+Sg+Neu+Acc:it  # "the" ;
-it+art+Sg+Neu+Gen:ins  # "the" ;
-it+art+Sg+Neu+Dat:inu  # "the" ;
-it+art+Pl+Neu+Nom:in  # "the" ;
-it+art+Pl+Neu+Acc:in  # "the" ;
-it+art+Pl+Neu+Gen:inna  # "the" ;
-it+art+Pl+Neu+Dat:inum  # "the" ;
+inn+Art+Sg+Msc+Nom:inn  # "the" ;
+inn+Art+Sg+Msc+Acc:inn  # "the" ;
+inn+Art+Sg+Msc+Gen:ins  # "the" ;
+inn+Art+Sg+Msc+Dat:inum  # "the" ;
+inn+Art+Pl+Msc+Nom:inir  # "the" ;
+inn+Art+Pl+Msc+Acc:ina  # "the" ;
+inn+Art+Pl+Msc+Gen:inna  # "the" ;
+inn+Art+Pl+Msc+Dat:inum  # "the" ;
+in+Art+Sg+Fem+Nom:in  # "the" ;
+in+Art+Sg+Fem+Acc:ina  # "the" ;
+in+Art+Sg+Fem+Gen:innar  # "the" ;
+in+Art+Sg+Fem+Dat:inni  # "the" ;
+in+Art+Pl+Fem+Nom:inar  # "the" ;
+in+Art+Pl+Fem+Acc:inar  # "the" ;
+in+Art+Pl+Fem+Gen:inna  # "the" ;
+in+Art+Pl+Fem+Dat:inum  # "the" ;
+it+Art+Sg+Neu+Nom:it  # "the" ;
+it+Art+Sg+Neu+Acc:it  # "the" ;
+it+Art+Sg+Neu+Gen:ins  # "the" ;
+it+Art+Sg+Neu+Dat:inu  # "the" ;
+it+Art+Pl+Neu+Nom:in  # "the" ;
+it+Art+Pl+Neu+Acc:in  # "the" ;
+it+Art+Pl+Neu+Gen:inna  # "the" ;
+it+Art+Pl+Neu+Dat:inum  # "the" ;
 sjá+Dem+Sg+Msc+Nom:sjá  # "this" ;
 þessi+Dem+Sg+Msc+Nom:þessi  # "this" ;
 þessi+Dem+Sg+Msc+Acc:þenna  # "this" ;
