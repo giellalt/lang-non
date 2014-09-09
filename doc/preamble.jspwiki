@@ -1,11 +1,12 @@
-!!!Free and Open source Finnish analyser gtsvn-fi
+!!!Free and Open source Old Norse analyser gtdivvun-non
 
-;Authors: Divvun and Giellatekno teams, Aajege, community members
+;Authors: Divvun and Giellatekno teams, Aajege, Germanic Lexicon Project
 ;Software version: 2012
 ;Documentation license: GNU GFDL
 ;SVN Revision: $Revision: 68217 $
 ;SVN Date: $Date: 2013-01-16 11:31:33 +0200 (Wed, 16 Jan 2013) $
 
-!!!GTSVN-sma
+!!!GTDivvun-non
 
-This is free and open source South Sámi morphology.
+This is free and open source Old Norse morphology, based on work by the
+Germanic Lexicon Project.
