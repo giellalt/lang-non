@@ -426,7 +426,7 @@ REMOVE Inf IF (-1C Pron + 3Pl)(0 V + 3Pl);
 
 # V + Refl
 
-SELECT ("seg" Refl) IF (-1 (Inf OR 3Sg or 3Pl)) ;
+SELECT ("seg" Refl) IF (-1 (Inf OR 3Sg OR 3Pl)) ;
 
 
 # Nominative
