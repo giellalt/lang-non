@@ -14,8 +14,8 @@ convert_tagsets: \
 	@echo
 	@echo "*** Converting Old Norse tagset ***" ;
 	@echo
-	@perl tagconv.pl < adjectives.lexc  > ../stems/
-	@perl tagconv.pl < nouns.lexc       > ../stems/
-	@perl tagconv.pl < propernouns.lexc > ../stems/
-	@perl tagconv.pl < verbs.lexc       > ../stems/
-	@perl tagconv.pl < root.lexc        > ../
+	@perl tagconv.pl < adjectives.lexc  > ../stems/adjectives.lexc
+	@perl tagconv.pl < nouns.lexc       > ../stems/nouns.lexc
+	@perl tagconv.pl < propernouns.lexc > ../stems/propernouns.lexc
+	@perl tagconv.pl < verbs.lexc       > ../stems/verbs.lexc
+	@perl tagconv.pl < root.lexc        > ../root.lexc
