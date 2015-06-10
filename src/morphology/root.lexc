@@ -1,8 +1,13 @@
 ! Old Norse analyser. Cf. website below for credits and references.
 ! http://xixona.dlsi.ua.es/~fran/old_icelandic/index.php
 
-Multichar_Symbols
+! ========================================================================== !
+! !!            !!!__UNDEFINED__ morphological analyser                      !
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF __UNDEFINED__ LANGUAGE.
+ 
 
+Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 !! POS:
 +A     !!≈ * @CODE@ = Adjective
 +Adv   !!≈ * @CODE@ = Adverb
