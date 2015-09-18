@@ -1,12 +1,12 @@
-!!!Free and Open source Old Norse analyser gtdivvun-non
+!!!Free and Open source Old Norse analyser giella-non
 
-;Authors: Divvun and Giellatekno teams, Aajege, Germanic Lexicon Project
+;Authors: Divvun and Giellatekno teams, Germanic Lexicon Project
 ;Software version: 2012
 ;Documentation license: GNU GFDL
 ;SVN Revision: $Revision: 68217 $
 ;SVN Date: $Date: 2013-01-16 11:31:33 +0200 (Wed, 16 Jan 2013) $
 
-!!!GTDivvun-non
+!!!giella-non
 
 This is free and open source Old Norse morphology, based on work by the
 Germanic Lexicon Project.
