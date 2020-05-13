@@ -1,0 +1,35 @@
+[package]
+name = "non"
+human_name = "Old Norse"
+version = "0.1.0"
+
+# Table of speller tag -> filename to include in the bundle
+# filenames depends on specific project
+[spellers.non]
+filename = "non-mobile.zhfst"
+
+# Table of bundles to generated
+# key is the type of bundle
+# Windows speller bundle require a uuid for the installer
+[bundles.speller_win]
+package = "speller-non"
+platform = "windows"
+uuid = "A6FBC96F-0C35-40D7-B6DB-7585FA1B5AD4"
+repo = "https://pahkat.uit.no/main/"
+
+[bundles.speller_macos]
+pkg_id = "no.divvun.MacDivvun.non"
+package = "speller-non"
+platform = "macos"
+repo = "https://pahkat.uit.no/main/"
+
+[bundles.speller_win_mso]
+package = "speller-non-mso"
+platform = "windows"
+uuid = "8C2E2284-51D2-472A-90ED-E536817923F8"
+repo = "https://pahkat.uit.no/main/"
+
+[bundles.speller_mobile]
+package = "speller-non"
+platform = "mobile"
+repo = "https://pahkat.uit.no/main/"
