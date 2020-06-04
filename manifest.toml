@@ -1,0 +1,9 @@
+name = "Old Norse"
+version = "0.1.0"
+
+[macos]
+system_pkg_id = "no.divvun.MacDivvun.non"
+
+[windows]
+system_product_code = "A6FBC96F-0C35-40D7-B6DB-7585FA1B5AD4"
+msoffice_product_code = "8C2E2284-51D2-472A-90ED-E536817923F8"
