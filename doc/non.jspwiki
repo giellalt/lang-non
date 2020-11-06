@@ -34,6 +34,7 @@ POS:
  * +RIGHT =
 
  * +Interr = 
+ * +Symbol = independent symbols in the text stream, like £, €, ©
 
 Numerus:
  * +1Sg  = 1. person singular
