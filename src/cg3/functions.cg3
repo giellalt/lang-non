@@ -29,6 +29,8 @@ SETS
 LIST BOS = (>>>) (<s>);
 LIST EOS = (<<<) (</s>);
 
+INCLUDE fsttags.cg3 ;
+
 # CG3 doesn´t function without >>> and <<< !
 
 # Tags declared as single-membered LISTs 
