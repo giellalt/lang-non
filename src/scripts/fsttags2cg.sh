@@ -27,5 +27,7 @@ k=" ;"
 
 echo "$i$j$k" > src/cg3/fsttags.cg3
 
+rm -f xxrest
+
 echo "All tags put in src/cg3/fsttags.cg3, to be read by INCLUDE command in the cg3 files"
 echo ""
