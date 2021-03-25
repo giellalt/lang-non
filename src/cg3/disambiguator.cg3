@@ -1,17 +1,11 @@
+# ======================= #
+# Old Norse disambiguator #
+# ======================= #
 
-
-# ===================== #
-# Faroese disambiguator #
-# ===================== #
-
-
-# ========== #
-# Delimiters #
-# ========== #
-
+# Delimiters 
+# ========== 
 
 DELIMITERS = "<.>" "<!>" "<?>" "<¶>";
-
 
 
 # ============= #
@@ -19,96 +13,44 @@ DELIMITERS = "<.>" "<!>" "<?>" "<¶>";
 # ============= #
 
 
-# ========
-   SETS
-# ========
+# Boundary tags
+# =============
 
 LIST BOS = (>>>) (<s>); 
 LIST EOS = (<<<) (</s>); # vislcg and CG-2 together.
 
-LIST N = N ;
-LIST V = V ;
-LIST A = A ;
-LIST A* = A* ;
-LIST Prop = Prop ;
-LIST Adv = Adv ;
-LIST Num = Num ;
-LIST CC = CC ;
-LIST CS = CS ;
-LIST Interj = Interj ;
-LIST Abbr = Abbr ;
-LIST ACR = ACR ;
-LIST Pr = Pr ;
-LIST Pron = Pron ;
-LIST Pers = Pers ;
-LIST Det = Det ;
-LIST Dem = Dem ;
-LIST Refl = Refl ;
-LIST Recipr = Recipr ;
-LIST Poss = Poss ;
-LIST Interr = Interr ;
-LIST IM = IM ;
 
-LIST Nom = Nom ;
-LIST Acc = Acc ;
-LIST Gen = Gen ;
-LIST Dat = Dat ;
-LIST Msc = Msc ;
-LIST Fem = Fem ;
-LIST Neu = Neu ;
-LIST Sg = Sg ;
-LIST Pl = Pl ;
-LIST Def = Def ;
-LIST Indef = Indef ;
-LIST Cmp = Cmp ;
-LIST Superl = Superl ;
-LIST Prs = Prs ;
-LIST Prt = Prt ;
-LIST 1Sg = 1Sg ;
-LIST 2Sg = 2Sg ;
-LIST 3Sg = 3Sg ;
-LIST Inf = Inf ;
-LIST PrfPrc = PrfPrc ;
-LIST PrsPrc = PrsPrc ;
-LIST Ind = Ind ;
-LIST Imp = Imp ;
-LIST Sbj = Sbj ;
-LIST Sup = Sup ;
-LIST Cmpnd = Cmpnd ;
-LIST CLB = CLB ;
-LIST PUNCT = PUNCT ;
-LIST LEFT = LEFT ;
-LIST RIGHT = RIGHT ;
-LIST Guess = Guess ;
+# fst tags
+# ========
 
-LIST Sem/Fem = Sem/Fem ;
-LIST Sem/Mal = Sem/Mal ;
-LIST Sem/Plc = Sem/Plc ;
-LIST Sem/Sur = Sem/Sur ;
-LIST Sem/Org = Sem/Org ;
-LIST Sem/Veh = Sem/Veh ;
+#  -- Her kjem taggane frå root.lexc, automatisk generert til fsttags.cg3
+#  -- akkurat no gjort med det heimesnekra scriptet src/scripts/fsttags2cg.sh
+#  -- Dette er det eg vil teste ut (Trond)
+
+INCLUDE fsttags.cg3 ;
 
 
-LIST TAG = N V A Adv CC CS Interj Pr Pron Pers Det Refl Recipr Poss Nom Acc Gen
-Dat Msc Fem Neu Sg Pl Def Indef Cmp Sup Prs Prt 1Sg 2Sg 3Sg Inf PrfPrc
-PrsPrc Sup Imp CLB PUNCT LEFT RIGHT Sem/Fem Sem/Mal Sem/Plc Sem/Sur Sem/Org Sem/Veh Guess ;
 
+# Herifrå og ut er det business som vanleg
+
+
+# Sets of tags
+# ============
+
+
+# The PoS tags
+
+SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS  | ("\?") ;
+
+
+# Noun sets
 
 LIST NAGD = Nom Acc Gen Dat ;
 LIST AGD = Acc Gen Dat ;
 LIST GENDER = Msc Fem Neu ;
 LIST NUMBER = Sg Pl ;
+
 SET NAGDNUMBERGENDER = (Msc Sg Nom) OR (Msc Sg Acc) OR (Msc Sg Gen) OR (Msc Sg Dat) OR (Msc Pl Nom) OR (Msc Pl Acc) OR (Msc Pl Gen) OR (Msc Pl Dat) OR (Fem Sg Nom) OR (Fem Sg Acc) OR (Fem Sg Gen) OR (Fem Sg Dat) OR (Fem Pl Nom) OR (Fem Pl Acc) OR (Fem Pl Gen) OR (Fem Pl Dat) OR (Neu Sg Nom) OR (Neu Sg Acc) OR (Neu Sg Gen) OR (Neu Sg Dat) OR (Neu Pl Nom) OR (Neu Pl Acc) OR (Neu Pl Gen) OR (Neu Pl Dat) ;
-
-
-# Sets
-# ====
-
-SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS | Interj | Num | ("\?") ;
-
-
-# Noun sets
-
 
 SET NounMscFem = (N Msc) OR (N Fem) ;
 SET NounMscNeu = (N Msc) OR (N Neu) ;
@@ -122,12 +64,12 @@ LIST 3PERS = "hann" "hon" "tað" ;
 
 # Adjective sets
 
-SET REALADJ = A OR A* ;
+SET REALADJ = A ;
 
 
 # Nominal sets
 
-LIST NOMINALHEAD = N Num Pers Refl Recipr "Pron Interr" "Pron Indef" ;
+LIST NOMINALHEAD = N Refl Recipr "Pron Interr" "Pron Indef" Num ;
 
 LIST NorA = N A ;
 
@@ -135,7 +77,7 @@ LIST PRENAGR = Det A ;
 
 LIST MIDJA = "miðja" ; # in the middle of - construction. More N in here, also bottle constr.
 
-SET NOT-ACC = TAG - Acc ;
+LIST NOT-ACC = Nom Gen Dat ;
 
 
 # Verb sets
@@ -148,13 +90,13 @@ LIST MODV = "kunna" "láta" "skula" "vilja" "munna" "mega" ;
 
 SET AUX = COPULA OR HAVA OR MODV ;
 
-LIST VFIN = Prs Prt Imp Sbj ;
-LIST INDSBJ = Ind Sbj ;
+LIST VFIN = Prs Prt Imp ;
+LIST INDSBJ = Ind ;
 #LIST Ind = Prs Prt ;
 
 LIST NONTHIRDV = 1Sg 2Sg 1Pl 2Pl ;
 
-LIST VINFIN = Inf Sup PrfPrs PrsPrc ;
+LIST VINFIN = Inf PrfPrs PrsPrc ;
 
 
 LIST DATV = "bjóða" "hýsa" "sleppa" "smakka" "takka" ; # "undirvísa" 
@@ -177,7 +119,7 @@ LIST THIRD = Sg 3Sg Pl 3Pl ;
 
 # Number sets
 
-SET NUMBERS = Num - ("eitt") - ("1") ;
+ SET NUMBERS = Num - ("eitt") - ("1") ;
 
 # Preposition sets
 
@@ -226,7 +168,7 @@ SET NOACCDAT = WORD - Acc - Dat ;
 
 #SET NO
 
-SET PRE-N =  A | Det | (N Gen) | Num | (Pron Gen) | CC ; # Det???
+SET PRE-N =  A | Det | (N Gen) | (Pron Gen) | CC | Num ; # Det??? 
 
 
 LIST COMMA = (",") ;
@@ -243,7 +185,7 @@ SET NPNH = WORDMARK - PRE-N ;
 SET NPNHA = WORDMARK - PRE-N - Adv ;
 SET NOT-ADV = WORDMARK - Adv - CC ; # adding CC
 SET NOT-PROP = WORDMARK - Prop - CC ;
-SET LEX-ADV = Adv - (A*) ;
+SET LEX-ADV = Adv - (A) ;
 SET NOT-A = WORDMARK - A ;
 SET NOT-CC = WORDMARK - CC ;
 SET NOUNADJ = N | A ;
@@ -275,7 +217,6 @@ LIST BAREPLURALS = "barn" "fólk" "bygdafólk" "konufólk" ;
 SECTION
 
 
-REMOVE Guess ; # If any other reading is possible.
 
 
 # We need some erur rules to really select the adjective erur. TODO
@@ -390,7 +331,7 @@ SELECT:r39 Pr IF (0 ("til"))(*1 N OR NPNH OR ("at") BARRIER NPNHA);
 SELECT:r3 Pr IF (0 ("til"))(*1 (N Gen) BARRIER NPNHA);
 
 # tíður
-SELECT ("tíður" A* Adv) IF (-1 VFIN); #(NOT 0 (Det $$NAGD) LINK 1 N + $$NAGD OR A + $$NAGD);
+SELECT ("tíður" A Adv) IF (-1 VFIN); #(NOT 0 (Det $$NAGD) LINK 1 N + $$NAGD OR A + $$NAGD);
 	## Tú hugsar títt um bygdafólk.
 	
 # um
@@ -445,7 +386,7 @@ SELECT V IF (-1 Adv)(0 ("bar"))(1 ("til"));
 SELECT:vera ("vera") IF (0 ("ver"))(*-1 ("hava") BARRIER V);
 
 # verða
-SELECT:verda ("verða") IF (0 ("verður"))(*1 A OR Sup CBARRIER NOT-ADV);
+SELECT:verda ("verða") IF (0 ("verður"))(*1 A CBARRIER NOT-ADV);
 	     ## ... sum av tær verður gitin.
 
 # kunna
@@ -454,13 +395,6 @@ SELECT:kunna Inf IF (0 ("kunna"))(*1 Inf BARRIER NOT-ADV);
 
 # Pron Pers or Det
 
-REMOVE Pers IF (-1 Pr)(0 (Det Gen))(*1 N OR A BARRIER NPNH);
-       ## vendu móti hansara bygd.
-
-REMOVE Det IF (0 Pers)(1 EOS OR VFIN OR Pr OR CC OR S-BOUNDARY);
-REMOVE Dem IF (0 Pers)(1 EOS OR VFIN OR Pr OR CC OR Num OR S-BOUNDARY);
-
-REMOVE:DetNotDem (Pron Pers) IF (0 Dem + $$GENDER + $$NUMBER + $$NAGD)(1 NorA + $$GENDER + $$NUMBER + $$NAGD);
 
 
 # Det (no idea why $$ does not work)
@@ -505,12 +439,6 @@ SELECT:ØllumSum Det + Neu + Sg + Dat IF (0 ("allur"))(1 COMMA)(2 ("sum"));
 SELECT CS IF (-2 ("av"))(-1 ("tað"))(0 ("at"));
 REMOVE Pr IF (0 ("at"))(NEGATE 1 NP-MEMBER);
 
-# á 
-SELECT Interj IF (-1 BOS)(0 ("á"))(1 COMMA OR CC);
-       ## Á, eg veit ikki.
-
-REMOVE:RemoveInterjAa Interj IF (NOT -1 BOS)(0 ("á"));
-
 # ár
 SELECT (Neu Sg Acc) IF (-1 ("i"))(0 ("ár"));
 
@@ -520,7 +448,7 @@ SELECT ("bara" Adv) IF (*1 N OR A BARRIER NPNH);
        ## Bara eygað sá roykin fara uppeftir sum óljóð.
 
 # eg
-SELECT:eg ("eg" Pron Pers Pl Nom) IF (*1 (V Pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
+SELECT:eg ("eg" Pron  Pl Nom) IF (*1 (V Pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
 	  ## Vit mugu sleppa.
 
 # ein
@@ -532,8 +460,8 @@ SELECT:eingin ("eingin") IF (-1 ("til"))(0 Gen);
 	      ## til einkis.
 
 # hafa
-SELECT ("hava") IF (0 ("høva"))(*1 Sup BARRIER NOT-ADV);
-SELECT ("hava") IF (0 ("høva"))(-1 Sup);
+SELECT ("hava") IF (0 ("høva"))(*1 PrfPrc BARRIER NOT-ADV);
+SELECT ("hava") IF (0 ("høva"))(-1 PrfPrc);
        ## Teir høvdu lýtt á kongin.
 
 # hann
@@ -547,7 +475,7 @@ REMOVE ("hera" Imp) IF (0 ("her"));
 SELECT:hesinNom ("hesin" Pron Dem Neu Sg Nom) IF (1 VFIN)(NOT 2 Nom);
 SELECT:hesinAcc ("hesin" Pron Dem Neu Sg Acc) IF (1 VFIN)(2C Nom);
 
-REMOVE:Hetta ("Hetta" Prop) IF (NOT -1 Sem/Mal);
+
 
 # hon
 SELECT:hon Pron IF (0 ("hon"))(NOT 0 PRE-N);
@@ -609,7 +537,6 @@ SELECT Adv IF (-1 Adv OR NPNH OR COMMA)(0 ("tá"))(1 Det OR Pron OR V);
 	
 SELECT Adv IF (-1 NPNH)(1 Ind OR Sbj);
 
-REMOVE:r5 Det IF (0 Pers)(NEGATE 0 Gen LINK -1 N)(NOT 1 NPNHA OR N);
 
 
 # um
@@ -630,9 +557,6 @@ REMOVE Imp IF (NOT -1 BOS)(0 ("væl"))(NOT 1 ("um"));
 # væla 2 -di s 1: ~ um 1 bøta um, hjálpa upp á, umvæla, ~ um húsini 
 #     2 (sj.) hjúkla um, hugsa ikki um at ~ um meg
 
-# á
-REMOVE Interj IF (1 WORD)(0 ("á" Pr));
-REMOVE Interj IF (-1 V)(0 ("á" Pr));
 
 # Adverbs
 # General adverb
@@ -647,12 +571,12 @@ REMOVE Adv IF (-1 Det OR Pr)(0 A)(1 N);
        ## ið stakk í bleyta jørð,
 
 # Lexicalised adverbs.
-REMOVE:r566 (A* Adv) IF (0 LEX-ADV) ;
+REMOVE:r566 (A Adv) IF (0 LEX-ADV) ;
 	## Serliga er tað ein.
 
 # Adverb verbs
 
-SELECT:umleid Adv IF (0 ("umleið"))(1 Num);
+#SELECT:umleid Adv IF (0 ("umleið"))(1 Num);
 	
 # Idioms
 
@@ -694,9 +618,9 @@ REMOVE:r9b Msc IF (0 Poss + $$NAGD)(-1 NounFemNeu + $$NAGD LINK NOT 0 Msc);
 REMOVE:r10b Fem IF (0 Poss + $$NAGD)(-1 NounMscNeu + $$NAGD LINK NOT 0 Fem);
 
 
-#REMOVE:r11b Neu IF (0 A + $$NAGD)(-1 NounMscFem + $$NAGD LINK NOT 0 Neu);
-#REMOVE:r12b Msc IF (0 A + $$NAGD)(-1 NounFemNeu + $$NAGD LINK NOT 0 Msc);
-#REMOVE:r13b Fem IF (0 A + $$NAGD)(-1 NounMscNeu + $$NAGD LINK NOT 0 Fem);
+REMOVE:r11b Neu IF (0 A + $$NAGD)(-1 NounMscFem + $$NAGD LINK NOT 0 Neu);
+REMOVE:r12b Msc IF (0 A + $$NAGD)(-1 NounFemNeu + $$NAGD LINK NOT 0 Msc);
+REMOVE:r13b Fem IF (0 A + $$NAGD)(-1 NounMscNeu + $$NAGD LINK NOT 0 Fem);
 
 # Definiteness disambiguation
 
@@ -735,17 +659,17 @@ SELECT:r30c $$NUMBER IF (-1C (Pron Indef) + $$NUMBER)(0 N);
 
 REMOVE:r31 $$GENDER IF (-1 N LINK NOT 0 $$GENDER)(0 Poss);
 
-REMOVE:r32 $$GENDER IF (0 Poss)(*1 N OR A BARRIER NPNHA LINK NOT 0 $$GENDER);
+#REMOVE:r32 $$GENDER IF (0 Poss)(*1 N OR A BARRIER NPNHA LINK NOT 0 $$GENDER);
 
-SELECT:DisPostPoss Poss IF (-1 N + $$GENDER + $$NAGD)(0 $$GENDER + $$NAGD); #(NOT 1 ...)
+#SELECT:DisPostPoss Poss IF (-1 N + $$GENDER + $$NAGD)(0 $$GENDER + $$NAGD); #(NOT 1 ...)
 
 # Number disambiguation
-REMOVE:r33 Pl IF (*-1 ("eitt" Num Sg) OR (Det Sg) BARRIER NOT-A)(0 (N Sg));
+#REMOVE:r33 Pl IF (*-1 ("eitt" Num Sg) OR (Det Sg) BARRIER NOT-A)(0 (N Sg));
 # Here, we need vislcg3 and variable notation!
 
 REMOVE:PlPl (N Sg) IF (0 (N Pl))(-1 Pl)(NOT -1 Sg);
 
-SELECT:NumNPl (N Pl) IF (-1 NUMBERS);
+#SELECT:NumNPl (N Pl) IF (-1 NUMBERS);
 
 SELECT:BarePl (N Pl) IF (NOT -1 PRE-N)(0 BAREPLURALS);
 
@@ -792,8 +716,8 @@ REMOVE:r47 Det IF (0 Pers)(NEGATE *1 Def OR ("báðir") BARRIER NPNH)(NEGATE 0 G
 	##
 # teimum báðum, and probably more Det + Pron
 
-#REMOVE:annar Pron IF (0 ("annar" $$NUMBER))(1 (N $$NUMBER));
-#REMOVE:annar ("annar" Pron $$NAGD) IF (1 (N $$NAGD));
+REMOVE:annar Pron IF (0 ("annar" $$NUMBER))(1 (N $$NUMBER));
+REMOVE:annar ("annar" Pron $$NAGD) IF (1 (N $$NAGD));
 REMOVE:annar ("annar" Pron) + $$NAGD IF (1 N + $$NAGD);
 
 #NP Coordination
@@ -841,11 +765,11 @@ REMOVE Inf IF (-1 (Pl Nom))(0 (V Pl))(NOT -1 Acc)(NOT -2 VFIN);
 
 # REMOVE:ImpFirst N IF (-1 BOS OR PUNCT)(0 Imp)(*1 ("tín" Poss) BARRIER VFIN);
 # 
-# REMOVE Imp IF (-1C Ind OR PrfPrc OR Inf OR PrsPrc OR Sup OR Refl);
+# REMOVE Imp IF (-1C Ind OR PrfPrc OR Inf OR PrsPrc OR Refl);
 # 	## Gu∂ gjør∂i hvalvi∂.
-# REMOVE Imp IF (-1 COMMA)(-2C Ind OR PrfPrc OR Inf OR PrsPrc OR Sup OR Refl);
+# REMOVE Imp IF (-1 COMMA)(-2C Ind OR PrfPrc OR Inf OR PrsPrc OR Refl);
 # 
-# REMOVE Imp IF (-1 CS)(0 Ind OR Sbj);
+# REMOVE Imp IF (-1 CS)(0 Ind);
 # 
 # REMOVE Imp IF (-1 Adv OR Nom OR Pr OR CS OR V)(0 Prs OR Prt);
 # This rule was commented out, but seems to be sensible, after all.
@@ -860,7 +784,7 @@ REMOVE Imp ;
 
 #REMOVE:r52 Imp IF (NOT *-1 CC OR COMMA LINK *-1 Imp)(NOT *-1 BOS OR PUNCT BARRIER WORD); # hmm
 
-REMOVE Sup IF (*-1 CLB BARRIER WORD)(0 Imp)(*1 CLB  BARRIER Ind);
+
 
 
 
@@ -877,14 +801,7 @@ REMOVE Sup IF (*-1 CLB BARRIER WORD)(0 Imp)(*1 CLB  BARRIER Ind);
 
 
 
-# Supine
 
-#SELECT:r55 Sup IF (*-1 ("fáa" V) OR ("hava" V Ind) BARRIER NOT-ADV);
-#check 
-
-REMOVE:r56 Sup IF (0 Ind)(NOT *-1C VFIN BARRIER S-BOUNDARY)(NOT *1C VFIN BARRIER S-BOUNDARY);
-
-REMOVE:SFregel N IF (0 Sup)(1 VFIN);
 
 # Present singular
 
