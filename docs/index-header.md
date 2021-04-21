@@ -1,7 +1,7 @@
 # Old Norse documentation
 
 [![Maturity: Experiment](https://img.shields.io/badge/Maturity-Experiment-black.svg)](https://giellalt.github.io/MaturityClassification.html)
-[![License](https://img.shields.io/github/license/giellalt/template-lang-non)](https://raw.githubusercontent.com/giellalt/lang-non/develop/LICENSE)
+[![License](https://img.shields.io/github/license/giellalt/lang-non)](https://raw.githubusercontent.com/giellalt/lang-non/develop/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-non)](https://github.com/giellalt/lang-non/issues)
 [![Build status](https://github.com/giellalt/lang-non/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-non/actions)
 
