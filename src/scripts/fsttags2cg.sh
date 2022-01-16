@@ -2,13 +2,16 @@
 
 ### Generated tags for cg3 file ###
 
+tagfile=$1
+cgtagfile=$2
+
 echo ""
 echo "Picking tags from root.lexc"
 echo "processing..."
 
 i="LIST-TAGS += "
 
-cat src/fst/root.lexc |\
+cat $tagfile |\
 cut -d '!' -f1 |\
 cut -d ':' -f1 |\
 sed 's/+/¢+/g' |\
@@ -25,7 +28,7 @@ tr '\n' ' ' > xxrest
 j=`cat xxrest`
 k=" ;"
 
-echo "$i$j$k" > src/cg3/fsttags.cg3
+echo "$i$j$k" > $cgtagfile
 
 rm -f xxrest
 
