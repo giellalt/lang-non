@@ -31,7 +31,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Refl   !!≈ * @CODE@ =
 +Rel    !!≈ * @CODE@ =
 +Interr !!≈ * @CODE@ = 
-+Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
++Symbol !!≈ * @CODE@ = independent symbols in the text stream, like `£`, `€`, `©`
 
 !! Numerus:
 +1Sg !!= * @CODE@ = 1. person singular
