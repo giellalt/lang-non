@@ -636,7 +636,7 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
  * +Refl =
  * +Rel =
  * +Interr = 
- * +Symbol = independent symbols in the text stream, like £, €, ©
+ * +Symbol = independent symbols in the text stream, like `£`, `€`, `©`
 
 Numerus:
  * +1Sg  = 1. person singular
