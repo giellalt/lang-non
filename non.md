@@ -608,11 +608,13 @@ These were the set types.
 
 * * *
 <small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-non/blob/main/../src/cg3/functions.cg3)</small>
-# Old Norse morphological analyser                      !
+# Old Norse morphological analyser
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
 
 
-POS:
+ # Definitions for Multichar_Symbols
+
+## POS
  * +A = Adjective
  * +Adv = Adverb
  * +Art = Article
@@ -665,6 +667,7 @@ Other:
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
+
 Tag | Explanation
 --- | ---
  |  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
@@ -675,6 +678,7 @@ For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
+
 Tag | Explanation
 —-- | ---
  |  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
@@ -690,6 +694,7 @@ Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
+
 Tag | Explanation
 —-- | ---
  |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
