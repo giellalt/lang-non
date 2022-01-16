@@ -5,7 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-non)](https://github.com/giellalt/lang-non/issues)
 [![Build status](https://github.com/giellalt/lang-non/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-non/actions)
 
-This page documents the work on the [Old Norse language model](http://github.com/giellalt/lang-non]. The language model is just a spelled-out paradigm of Old Norse paradigms, formatted in `lexc`. The model is large enough to be useful.
+This page documents the work on the [**Old Norse language model**](https://github.com/giellalt/lang-non). The language model is just a spelled-out paradigm of Old Norse paradigms, formatted in `lexc`. The model is large enough to be useful.
 
 # Project documentation
 
