@@ -54,9 +54,13 @@ Tags for later inclusion
 
 Other:
 
-## Flag diacritics
+# Flag diacritics
 We have manually optimised the structure of our lexicon using following
-flag diacritics to restrict morhpological combinatorics - only allow compounds
+flag diacritics to restrict morhpological combinatorics.
+
+## Compounds with deverbal nouns
+
+The basic idea is to only allow compounds
 with verbs if the verb is further derived into a noun again:
 
 Tag | Explanation
@@ -86,10 +90,10 @@ nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to u
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
 
-Tag | Explanation
-—-- | ---
- |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
- |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
+| Tag | Explanation
+| —-- | ---
+ | `@U.Cap.Obl@` | Allowing downcasing of derived names: deatnulasj.
+ | `@U.Cap.Opt@` | Allowing downcasing of derived names: deatnulasj.
 
 
 
