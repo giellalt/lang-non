@@ -25,10 +25,10 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +LEFT  !!≈ * @CODE@ =
 +RIGHT !!≈ * @CODE@ =
 
-+Dem
-+Det
-+Refl
-+Rel
++Dem    !!≈ * @CODE@ =
++Det    !!≈ * @CODE@ =
++Refl   !!≈ * @CODE@ =
++Rel    !!≈ * @CODE@ =
 +Interr !!≈ * @CODE@ = 
 +Symbol !!≈ * @CODE@ = independent symbols in the text stream, like £, €, ©
 
