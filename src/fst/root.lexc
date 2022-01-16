@@ -91,8 +91,8 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! The basic idea is to only allow compounds
 !! with verbs if the verb is further derived into a noun again:
 !! 
-!! Tag | Explanation
-!! --- | ---
+!! | Tag | Explanation
+!! | --- | ---
  @P.NeedNoun.ON@    !!≈ |  @CODE@ | (Dis)allow compounds with verbs unless nominalised
  @D.NeedNoun.ON@    !!≈ |  @CODE@ | (Dis)allow compounds with verbs unless nominalised
  @C.NeedNoun@       !!≈ |  @CODE@ | (Dis)allow compounds with verbs unless nominalised
@@ -102,8 +102,8 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! handled automatically if combined with +CmpN/xxx tags. If not used, they will
 !! do no harm.
 !! 
-!! Tag | Explanation
-!! —-- | ---
+!! | Tag | Explanation
+!! | —-- | ---
  @P.CmpFrst.FALSE@ !!≈ |  @CODE@ | Require that words tagged as such only appear first
  @D.CmpPref.TRUE@  !!≈ |  @CODE@ | Block such words from entering ENDLEX
  @P.CmpPref.FALSE@ !!≈ |  @CODE@ | Block these words from making further compounds
