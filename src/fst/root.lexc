@@ -2,13 +2,14 @@
 ! http://xixona.dlsi.ua.es/~fran/old_icelandic/index.php
 
 ! ========================================================================== !
-!! # Old Norse morphological analyser                      !
+!! # Old Norse morphological analyser
 ! ========================================================================== !
 !! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
  
 
-Multichar_Symbols  !!≈# Definitions for @CODE@
-!! POS:
+Multichar_Symbols  !!≈ # Definitions for @CODE@
+!! 
+!! ## POS
 +A     !!≈ * @CODE@ = Adjective
 +Adv   !!≈ * @CODE@ = Adverb
 +Art   !!≈ * @CODE@ = Article
@@ -85,7 +86,7 @@ Multichar_Symbols  !!≈# Definitions for @CODE@
 !! We have manually optimised the structure of our lexicon using following
 !! flag diacritics to restrict morhpological combinatorics - only allow compounds
 !! with verbs if the verb is further derived into a noun again:
-!!
+!! 
 !! Tag | Explanation
 !! --- | ---
  @P.NeedNoun.ON@    !!≈ |  @CODE@ | (Dis)allow compounds with verbs unless nominalised
@@ -96,7 +97,7 @@ Multichar_Symbols  !!≈# Definitions for @CODE@
 !! to control position-based compounding restrictions for nominals. Their use is
 !! handled automatically if combined with +CmpN/xxx tags. If not used, they will
 !! do no harm.
-!!
+!! 
 !! Tag | Explanation
 !! —-- | ---
  @P.CmpFrst.FALSE@ !!≈ |  @CODE@ | Require that words tagged as such only appear first
@@ -112,7 +113,7 @@ Multichar_Symbols  !!≈# Definitions for @CODE@
 !! nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 !! these flags. There exists a ready-made regex that will do the actual down-casing
 !! given the proper use of these flags.
-!!
+!! 
 !! Tag | Explanation
 !! —-- | ---
  @U.Cap.Obl@        !!≈ |  @CODE@ | Allowing downcasing of derived names: deatnulasj.
