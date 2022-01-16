@@ -25,7 +25,7 @@ endif # WANT_SYNTAX
 #################################################
 #### Add language-specific build rules here: ####
 
-fsttags.cg3: ../filters/lexicon-tags.txt
+fsttags.cg3: $(srcdir)/../fst/root.lexc
 	$(AM_V_GEN)$(srcdir)/../scripts/fsttags2cg.sh $< $@
 
 # make sure fsttags is built first:
