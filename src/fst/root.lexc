@@ -82,9 +82,13 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! Other:
 +IM
 
-!! ## Flag diacritics
+!! # Flag diacritics
 !! We have manually optimised the structure of our lexicon using following
-!! flag diacritics to restrict morhpological combinatorics - only allow compounds
+!! flag diacritics to restrict morhpological combinatorics.
+!! 
+!! ## Compounds with deverbal nouns
+!! 
+!! The basic idea is to only allow compounds
 !! with verbs if the verb is further derived into a noun again:
 !! 
 !! Tag | Explanation
@@ -114,10 +118,10 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! these flags. There exists a ready-made regex that will do the actual down-casing
 !! given the proper use of these flags.
 !! 
-!! Tag | Explanation
-!! —-- | ---
- @U.Cap.Obl@        !!≈ |  @CODE@ | Allowing downcasing of derived names: deatnulasj.
- @U.Cap.Opt@        !!≈ |  @CODE@ | Allowing downcasing of derived names: deatnulasj.
+!! | Tag | Explanation
+!! | —-- | ---
+ @U.Cap.Obl@        !!≈ | `@CODE@` | Allowing downcasing of derived names: deatnulasj.
+ @U.Cap.Opt@        !!≈ | `@CODE@` | Allowing downcasing of derived names: deatnulasj.
 
 LEXICON Root
 Nouns ;
