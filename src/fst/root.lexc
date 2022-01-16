@@ -15,11 +15,11 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +Art   !!≈ * @CODE@ = Article
 +CC    !!≈ * @CODE@ = Conjunct
 +CS    !!≈ * @CODE@ = Subjunct
-+N     !!≈ * @CODE@ =
-+Pr    !!≈ * @CODE@ =
-+Pron  !!≈ * @CODE@ =
-+Prop  !!≈ * @CODE@ =
-+V     !!≈ * @CODE@ =
++N     !!≈ * @CODE@ = Noun
++Pr    !!≈ * @CODE@ = Preposition
++Pron  !!≈ * @CODE@ = Pronoun
++Prop  !!≈ * @CODE@ = Proper noun
++V     !!≈ * @CODE@ = Verb
 
 +CLB   !!≈ * @CODE@ =
 +PUNCT !!≈ * @CODE@ =
