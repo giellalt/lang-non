@@ -7,7 +7,7 @@
 !! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
  
 
-Multichar_Symbols  !!≈ # Definitions for @CODE@
+Multichar_Symbols  !!≈# Definitions for @CODE@
 !! POS:
 +A     !!≈ * @CODE@ = Adjective
 +Adv   !!≈ * @CODE@ = Adverb
