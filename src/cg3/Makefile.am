@@ -25,6 +25,12 @@ endif # WANT_SYNTAX
 #################################################
 #### Add language-specific build rules here: ####
 
+fsttags.cg3: ../filters/lexicon-tags.txt
+	$(AM_V_GEN)$(srcdir)/../scripts/fsttags2cg.sh $< $@
+
+# make sure fsttags is built first:
+disambiguator.cg3: fsttags.cg3
+
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
 ##################################################################
