@@ -612,31 +612,31 @@ These were the set types.
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
 
 
- # Definitions for Multichar_Symbols
+# Definitions for Multichar_Symbols@CODE@
 
 ## POS
- * +A = Adjective
- * +Adv = Adverb
- * +Art = Article
- * +CC = Conjunct
- * +CS = Subjunct
- * +N =
- * +Pr =
- * +Pron =
- * +Prop =
- * +V =
+* +AAdjective = Adjective
+* +AdvAdverb = Adverb
+* +ArtArticle = Article
+* +CCConjunct = Conjunct
+* +CSSubjunct = Subjunct
+* +NNoun = Noun
+* +PrPreposition = Preposition
+* +PronPronoun = Pronoun
+* +Propnoun = Proper noun
+* +VVerb = Verb
 
- * +CLB =
- * +PUNCT =
- * +LEFT =
- * +RIGHT =
+* +CLB= =
+* +PUNCT= =
+* +LEFT= =
+* +RIGHT= =
 
- * +Dem =
- * +Det =
- * +Refl =
- * +Rel =
- * +Interr = 
- * +Symbol = independent symbols in the text stream, like `£`, `€`, `©`
+* +DemDemonstrative = Demonstrative
+* +Det= =
+* +Refl= =
+* +Rel= =
+* +Interr = 
+* +Symbol`©` = independent symbols in the text stream, like `£`, `€`, `©`
 
 Numerus:
  * +1Sg  = 1. person singular
@@ -672,27 +672,29 @@ flag diacritics to restrict morhpological combinatorics.
 The basic idea is to only allow compounds
 with verbs if the verb is further derived into a noun again:
 
-Tag | Explanation
---- | ---
- |  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
+| Tag | Explanation
+| --- | ---
+| `@P.NeedNoun.ON@nominalised` | (Dis)allow compounds with verbs unless nominalised
+| `@D.NeedNoun.ON@nominalised` | (Dis)allow compounds with verbs unless nominalised
+| `@C.NeedNoun@nominalised` | (Dis)allow compounds with verbs unless nominalised
+
+## Controlling General Compounding
 
 For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
 
-Tag | Explanation
-—-- | ---
- |  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
- |  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
- |  @P.CmpPref.FALSE@ | Block these words from making further compounds
- |  @D.CmpLast.TRUE@ | Block such words from entering R
- |  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
- |  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
- |  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
- |  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
+| Tag | Explanation
+| --- | ---
+| `@P.CmpFrst.FALSE@first` | Require that words tagged as such only appear first
+| `@D.CmpPref.TRUE@ENDLEX` | Block such words from entering ENDLEX
+| `@P.CmpPref.FALSE@compounds` | Block these words from making further compounds
+| `@D.CmpLast.TRUE@R` | Block such words from entering R
+| `@D.CmpNone.TRUE@compounding` | Combines with the next tag to prohibit compounding
+| `@U.CmpNone.FALSE@compounding` | Combines with the prev tag to prohibit compounding
+| `@P.CmpOnly.TRUE@R` | Sets a flag to indicate that the word has passed R
+| `@D.CmpOnly.FALSE@root.` | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
@@ -700,9 +702,9 @@ these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
 
 | Tag | Explanation
-| —-- | ---
- | `@U.Cap.Obl@` | Allowing downcasing of derived names: deatnulasj.
- | `@U.Cap.Opt@` | Allowing downcasing of derived names: deatnulasj.
+| --- | ---
+| `@U.Cap.Obl@deatnulasj.` | Allowing downcasing of derived names: deatnulasj.
+| `@U.Cap.Opt@deatnulasj.` | Allowing downcasing of derived names: deatnulasj.
 
 
 
