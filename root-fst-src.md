@@ -3,44 +3,48 @@
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
 
 
-# Definitions for Multichar_Symbols@CODE@
+# Definitions for Multichar_Symbols
 
 ## POS
-* +AAdjective = Adjective
-* +AdvAdverb = Adverb
-* +ArtArticle = Article
-* +CCConjunct = Conjunct
-* +CSSubjunct = Subjunct
-* +NNoun = Noun
-* +PrPreposition = Preposition
-* +PronPronoun = Pronoun
-* +Propnoun = Proper noun
-* +VVerb = Verb
+* `+A` = Adjective
+* `+Adv` = Adverb
+* `+Art` = Article
+* `+CC` = Conjunct
+* `+CS` = Subjunct
+* `+N` = Noun
+* `+Pr` = Preposition
+* `+Pron` = Pronoun
+* `+Prop` = Proper noun
+* `+V` = Verb
 
-* +CLB= =
-* +PUNCT= =
-* +LEFT= =
-* +RIGHT= =
+Punctuation:
+* `+CLB` = Clause boundary mark
+* `+PUNCT` = Other punctuation
+* `+LEFT` = Left part of paired punctuation
+* `+RIGHT` = Right part of paired punctuation
 
-* +DemDemonstrative = Demonstrative
-* +Det= =
-* +Refl= =
-* +Rel= =
-* +Interr = 
-* +Symbol`©` = independent symbols in the text stream, like `£`, `€`, `©`
+Sub-POS and miscellaneous:
+* `+Dem` = Demonstrative
+* `+Det` = Determinative(?)
+* `+Refl` = Reflexikve
+* `+Rel` = Relative
+* `+Interr` = Interrogative
+* `+Symbol` = independent symbols in the text stream, like `£`, `€`, `©`
 
 Numerus:
- * +1Sg  = 1. person singular
- * +2Sg  = 2. person singular
- * +3Sg  = 3. person singular
- * +1Du  = 1. person dual
- * +2Du  = 2. person dual
- * +1Pl  = 1. person plural
- * +2Pl  = 2. person plural
- * +3Pl  = 3. person plural
- * +3    = ?
- * +Sg   = Singular
- * +Pl   = Plural
+* `+1Sg ` = 1. person singular
+* `+2Sg ` = 2. person singular
+* `+3Sg ` = 3. person singular
+* `+1Du ` = 1. person dual
+* `+2Du ` = 2. person dual
+* `+1Pl ` = 1. person plural
+* `+2Pl ` = 2. person plural
+* `+3Pl ` = 3. person plural
+* `+1   ` = ?
+* `+2   ` = ?
+* `+3   ` = ?
+* `+Sg  ` = Singular
+* `+Pl  ` = Plural
 
 Case:
 
@@ -65,9 +69,9 @@ with verbs if the verb is further derived into a noun again:
 
 | Tag | Explanation
 | --- | ---
-| `@P.NeedNoun.ON@nominalised` | (Dis)allow compounds with verbs unless nominalised
-| `@D.NeedNoun.ON@nominalised` | (Dis)allow compounds with verbs unless nominalised
-| `@C.NeedNoun@nominalised` | (Dis)allow compounds with verbs unless nominalised
+| `@P.NeedNoun.ON@` | (Dis)allow compounds with verbs unless nominalised
+| `@D.NeedNoun.ON@` | (Dis)allow compounds with verbs unless nominalised
+| `@C.NeedNoun@` | (Dis)allow compounds with verbs unless nominalised
 
 ## Controlling General Compounding
 
@@ -78,14 +82,14 @@ do no harm.
 
 | Tag | Explanation
 | --- | ---
-| `@P.CmpFrst.FALSE@first` | Require that words tagged as such only appear first
-| `@D.CmpPref.TRUE@ENDLEX` | Block such words from entering ENDLEX
-| `@P.CmpPref.FALSE@compounds` | Block these words from making further compounds
-| `@D.CmpLast.TRUE@R` | Block such words from entering R
-| `@D.CmpNone.TRUE@compounding` | Combines with the next tag to prohibit compounding
-| `@U.CmpNone.FALSE@compounding` | Combines with the prev tag to prohibit compounding
-| `@P.CmpOnly.TRUE@R` | Sets a flag to indicate that the word has passed R
-| `@D.CmpOnly.FALSE@root.` | Disallow words coming directly from root.
+| `@P.CmpFrst.FALSE@` | Require that words tagged as such only appear first
+| `@D.CmpPref.TRUE@` | Block such words from entering ENDLEX
+| `@P.CmpPref.FALSE@` | Block these words from making further compounds
+| `@D.CmpLast.TRUE@` | Block such words from entering R
+| `@D.CmpNone.TRUE@` | Combines with the next tag to prohibit compounding
+| `@U.CmpNone.FALSE@` | Combines with the prev tag to prohibit compounding
+| `@P.CmpOnly.TRUE@` | Sets a flag to indicate that the word has passed R
+| `@D.CmpOnly.FALSE@` | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
@@ -94,8 +98,8 @@ given the proper use of these flags.
 
 | Tag | Explanation
 | --- | ---
-| `@U.Cap.Obl@deatnulasj.` | Allowing downcasing of derived names: deatnulasj.
-| `@U.Cap.Opt@deatnulasj.` | Allowing downcasing of derived names: deatnulasj.
+| `@U.Cap.Obl@` | Allowing downcasing of derived names: deatnulasj.
+| `@U.Cap.Opt@` | Allowing downcasing of derived names: deatnulasj.
 
 
 
