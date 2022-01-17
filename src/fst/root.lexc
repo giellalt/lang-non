@@ -10,43 +10,45 @@
 Multichar_Symbols  !!≈ # Definitions for @CODE@
 !! 
 !! ## POS
-+A     !!≈ * @CODE@ = Adjective
-+Adv   !!≈ * @CODE@ = Adverb
-+Art   !!≈ * @CODE@ = Article
-+CC    !!≈ * @CODE@ = Conjunct
-+CS    !!≈ * @CODE@ = Subjunct
-+N     !!≈ * @CODE@ = Noun
-+Pr    !!≈ * @CODE@ = Preposition
-+Pron  !!≈ * @CODE@ = Pronoun
-+Prop  !!≈ * @CODE@ = Proper noun
-+V     !!≈ * @CODE@ = Verb
++A     !!≈ * `@CODE@` = Adjective
++Adv   !!≈ * `@CODE@` = Adverb
++Art   !!≈ * `@CODE@` = Article
++CC    !!≈ * `@CODE@` = Conjunct
++CS    !!≈ * `@CODE@` = Subjunct
++N     !!≈ * `@CODE@` = Noun
++Pr    !!≈ * `@CODE@` = Preposition
++Pron  !!≈ * `@CODE@` = Pronoun
++Prop  !!≈ * `@CODE@` = Proper noun
++V     !!≈ * `@CODE@` = Verb
 
-+CLB   !!≈ * @CODE@ =
-+PUNCT !!≈ * @CODE@ =
-+LEFT  !!≈ * @CODE@ =
-+RIGHT !!≈ * @CODE@ =
+!! Punctuation:
++CLB   !!≈ * `@CODE@` = Clause boundary mark
++PUNCT !!≈ * `@CODE@` = Other punctuation
++LEFT  !!≈ * `@CODE@` = Left part of paired punctuation
++RIGHT !!≈ * `@CODE@` = Right part of paired punctuation
 
-+Dem    !!≈ * @CODE@ = Demonstrative
-+Det    !!≈ * @CODE@ =
-+Refl   !!≈ * @CODE@ =
-+Rel    !!≈ * @CODE@ =
-+Interr !!≈ * @CODE@ = 
-+Symbol !!≈ * @CODE@ = independent symbols in the text stream, like `£`, `€`, `©`
+!! Sub-POS and miscellaneous:
++Dem    !!≈ * `@CODE@` = Demonstrative
++Det    !!≈ * `@CODE@` = Determinative(?)
++Refl   !!≈ * `@CODE@` = Reflexikve
++Rel    !!≈ * `@CODE@` = Relative
++Interr !!≈ * `@CODE@` = Interrogative
++Symbol !!≈ * `@CODE@` = independent symbols in the text stream, like `£`, `€`, `©`
 
 !! Numerus:
-+1Sg !!= * @CODE@ = 1. person singular
-+2Sg !!= * @CODE@ = 2. person singular
-+3Sg !!= * @CODE@ = 3. person singular
-+1Du !!= * @CODE@ = 1. person dual
-+2Du !!= * @CODE@ = 2. person dual
-+1Pl !!= * @CODE@ = 1. person plural
-+2Pl !!= * @CODE@ = 2. person plural
-+3Pl !!= * @CODE@ = 3. person plural
-+1
-+2
-+3   !!= * @CODE@ = ?
-+Sg  !!= * @CODE@ = Singular
-+Pl  !!= * @CODE@ = Plural
++1Sg !!= * `@CODE@` = 1. person singular
++2Sg !!= * `@CODE@` = 2. person singular
++3Sg !!= * `@CODE@` = 3. person singular
++1Du !!= * `@CODE@` = 1. person dual
++2Du !!= * `@CODE@` = 2. person dual
++1Pl !!= * `@CODE@` = 1. person plural
++2Pl !!= * `@CODE@` = 2. person plural
++3Pl !!= * `@CODE@` = 3. person plural
++1   !!= * `@CODE@` = ?
++2   !!= * `@CODE@` = ?
++3   !!= * `@CODE@` = ?
++Sg  !!= * `@CODE@` = Singular
++Pl  !!= * `@CODE@` = Plural
 
 !! Case:
 +Nom
