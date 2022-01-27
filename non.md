@@ -607,7 +607,31 @@ These were the set types.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-non/blob/main/../src/cg3/functions.cg3)</small>
+<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-non/blob/main/../src/cg3/functions.cg3)</small>=================================== !
+The Old Norse morphophonological/twolc rules file !
+=================================== !
+
+
+
+
+
+
+
+
+* *primus%>s*
+* *primus00*
+
+
+* examples:*
+
+* examples:*
+
+
+* examples:*
+
+* examples:*
+* * *
+<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-non/blob/main/../src/fst/phonology.twolc)</small>
 # Old Norse morphological analyser
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
 
@@ -730,31 +754,7 @@ given the proper use of these flags.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/symbols.lexc](http://github.com/giellalt/lang-non/blob/main/../src/fst/affixes/symbols.lexc)</small>=================================== !
-The Old Norse morphophonological/twolc rules file !
-=================================== !
-
-
-
-
-
-
-
-
-* *primus%>s*
-* *primus00*
-
-
-* examples:*
-
-* examples:*
-
-
-* examples:*
-
-* examples:*
-* * *
-<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-non/blob/main/../src/fst/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [../src/fst/affixes/symbols.lexc](http://github.com/giellalt/lang-non/blob/main/../src/fst/affixes/symbols.lexc)</small>
 
 
 
