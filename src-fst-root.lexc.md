@@ -2,7 +2,6 @@
 # Old Norse morphological analyser
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
 
-
 # Definitions for Multichar_Symbols
 
 ## POS
@@ -101,15 +100,9 @@ given the proper use of these flags.
 | `@U.Cap.Obl@` | Allowing downcasing of derived names: deatnulasj.
 | `@U.Cap.Opt@` | Allowing downcasing of derived names: deatnulasj.
 
-
-
-
-
-
-
-
-
-
-
 * * *
-<small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-non/blob/main/../src/fst/root.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/root.lexc](https://github.com/giellalt/lang-non/blob/main/src/fst/root.lexc)</small>
+
+---
+
