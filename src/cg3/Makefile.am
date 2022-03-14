@@ -40,7 +40,7 @@ disambiguator.cg3: fsttags.cg3
 
 ####### Other targets: ###########
 clean-local:
-	-rm -f *.bin
+	-rm -f *.bin dependency.cg3 fsttags.cg3
 
 ####### Build rules via include: ########
 
