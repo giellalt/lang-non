@@ -1,6 +1,4 @@
 * `src/`
-    * `cg3/`
-        * [functions.cg3](src-cg3-functions.cg3.html) ([src](https://github.com/giellalt/lang-non/blob/main/src/cg3/functions.cg3))
     * `fst/`
         * `affixes/`
             * [symbols.lexc](src-fst-affixes-symbols.lexc.html) ([src](https://github.com/giellalt/lang-non/blob/main/src/fst/affixes/symbols.lexc))
