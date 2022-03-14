@@ -28,6 +28,9 @@ endif # WANT_SYNTAX
 dependency.cg3: $(GIELLA_SHARED)/smi/src/cg3/dependency.cg3
 	$(AM_V_CP)cp -f $< $@
 
+functions.cg3: $(GIELLA_SHARED)/smi/src/cg3/functions.cg3
+	$(AM_V_CP)cp -f $< $@
+
 fsttags.cg3: $(srcdir)/../fst/root.lexc
 	$(AM_V_GEN)$(srcdir)/../scripts/fsttags2cg.sh $< $@
 
