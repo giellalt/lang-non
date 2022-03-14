@@ -34,6 +34,8 @@ fsttags.cg3: $(srcdir)/../fst/root.lexc
 # make sure fsttags is built first:
 disambiguator.cg3: fsttags.cg3
 
+functions.cg3: fsttags.cg3
+
 ##################################################################
 #### END: Add local processing instructions ABOVE this line ######
 ##################################################################
