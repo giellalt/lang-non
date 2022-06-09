@@ -25,11 +25,16 @@ endif # WANT_SYNTAX
 #################################################
 #### Add language-specific build rules here: ####
 
-dependency.cg3: $(GIELLA_SHARED)/smi/src/cg3/dependency.cg3
+if HAVE_SHARED_SMI
+dependency.cg3: $(gt_SHARED_smi)/src/cg3/dependency.cg3
 	$(AM_V_CP)cp -f $< $@
 
-functions.cg3: $(GIELLA_SHARED)/smi/src/cg3/functions.cg3
+functions.cg3: $(gt_SHARED_smi)/src/cg3/functions.cg3
 	$(AM_V_CP)cp -f $< $@
+else
+%.cg3:
+	$(AM_V_GEN)echo "! missing dependency $@" > $@
+endif
 
 fsttags.cg3: $(srcdir)/../fst/root.lexc
 	$(AM_V_GEN)$(srcdir)/../scripts/fsttags2cg.sh $< $@
