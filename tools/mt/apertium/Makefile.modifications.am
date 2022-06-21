@@ -10,7 +10,6 @@ APERTIUM_GENERATOR_ATTGZ+=
 
 endif # WANT_APERTIUM
 
-
 ##################################################################
 #### Specify target languages and corresponding file names:   ####
 ##################################################################
