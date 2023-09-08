@@ -57,6 +57,9 @@ Tags for later inclusion
 
 Other:
 
+* **+Use/TTS** – **only** retained in the HFST Text-To-Speech disambiguation tokeniser
+* **+Use/-TTS** – **never** retained in the HFST Text-To-Speech disambiguation tokeniser
+
 # Flag diacritics
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics.
