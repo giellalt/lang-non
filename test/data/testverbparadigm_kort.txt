@@ -1,0 +1,16 @@
++V+Inf
++V+Ind+Prs+1Sg
++V+Ind+Prs+2Sg
++V+Ind+Prs+3Sg
++V+Ind+Prs+1Pl
++V+Ind+Prs+2Pl
++V+Ind+Prs+3Pl
++V+Ind+Prt+1Sg
++V+Ind+Prt+2Sg
++V+Ind+Prt+3Sg
++V+Ind+Prt+1Pl
++V+Ind+Prt+2Pl
++V+Ind+Prt+3Pl
++V+Imp+Sg
++V+Imp+Pl
++V+Sup

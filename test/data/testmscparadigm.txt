@@ -1,0 +1,16 @@
++N+Msc+Sg+Nom+Indef
++N+Msc+Sg+Acc+Indef
++N+Msc+Sg+Dat+Indef
++N+Msc+Sg+Gen+Indef
++N+Msc+Pl+Nom+Indef
++N+Msc+Pl+Acc+Indef
++N+Msc+Pl+Dat+Indef
++N+Msc+Pl+Gen+Indef
++N+Msc+Sg+Nom+Def
++N+Msc+Sg+Acc+Def
++N+Msc+Sg+Dat+Def
++N+Msc+Sg+Gen+Def
++N+Msc+Pl+Nom+Def
++N+Msc+Pl+Acc+Def
++N+Msc+Pl+Dat+Def
++N+Msc+Pl+Gen+Def
