@@ -3,7 +3,7 @@
 [![Maturity: Experiment](https://img.shields.io/badge/Maturity-Experiment-black.svg)](https://giellalt.github.io/MaturityClassification.html)
 [![License](https://img.shields.io/github/license/giellalt/lang-non)](https://github.com/giellalt/lang-non/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-non)](https://github.com/giellalt/lang-non/issues)
-[![Build Status](https://divvun-tc.thetc.se/api/github/v1/repository/giellalt/lang-non/main/badge.svg)](https://github.com/giellalt/lang-non/actions)
+[![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-non/main/badge.svg)](https://github.com/giellalt/lang-non/actions)
 
 This page documents the work on the **[Old Norse language model](https://github.com/giellalt/lang-non)**. The language model is just a spelled-out paradigm of Old Norse paradigms, formatted in `lexc`. The model is large enough to be useful.
 
