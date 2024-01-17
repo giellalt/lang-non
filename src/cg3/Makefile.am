@@ -36,7 +36,7 @@ else
 	$(AM_V_GEN)echo "! missing dependency $@" > $@
 endif
 
-fsttags.cg3: $(srcdir)/../fst/root.lexc
+fsttags.cg3: $(srcdir)/../fst/morphology/root.lexc
 	$(AM_V_GEN)$(srcdir)/../scripts/fsttags2cg.sh $< $@
 
 disambiguator.cg3: fsttags.cg3

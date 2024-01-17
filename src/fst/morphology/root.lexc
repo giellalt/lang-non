@@ -1,0 +1,591 @@
+! Old Norse analyser. Cf. website below for credits and references.
+! http://xixona.dlsi.ua.es/~fran/old_icelandic/index.php
+
+! ========================================================================== !
+!! # Old Norse morphological analyser
+! ========================================================================== !
+!! INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Old Norse LANGUAGE.
+ 
+
+Multichar_Symbols  !!≈ # Definitions for @CODE@
+!! 
+!! ## POS
++A     !!≈ * `@CODE@` = Adjective
++Adv   !!≈ * `@CODE@` = Adverb
++Art   !!≈ * `@CODE@` = Article
++CC    !!≈ * `@CODE@` = Conjunct
++CS    !!≈ * `@CODE@` = Subjunct
++N     !!≈ * `@CODE@` = Noun
++Pr    !!≈ * `@CODE@` = Preposition
++Pron  !!≈ * `@CODE@` = Pronoun
++Prop  !!≈ * `@CODE@` = Proper noun
++V     !!≈ * `@CODE@` = Verb
+
+!! Punctuation:
++CLB   !!≈ * `@CODE@` = Clause boundary mark
++PUNCT !!≈ * `@CODE@` = Other punctuation
++LEFT  !!≈ * `@CODE@` = Left part of paired punctuation
++RIGHT !!≈ * `@CODE@` = Right part of paired punctuation
+
+!! Sub-POS and miscellaneous:
++Dem    !!≈ * `@CODE@` = Demonstrative
++Det    !!≈ * `@CODE@` = Determinative(?)
++Refl   !!≈ * `@CODE@` = Reflexikve
++Rel    !!≈ * `@CODE@` = Relative
++Interr !!≈ * `@CODE@` = Interrogative
++Symbol !!≈ * `@CODE@` = independent symbols in the text stream, like `£`, `€`, `©`
+
+!! Numerus:
++1Sg !!= * `@CODE@` = 1. person singular
++2Sg !!= * `@CODE@` = 2. person singular
++3Sg !!= * `@CODE@` = 3. person singular
++1Du !!= * `@CODE@` = 1. person dual
++2Du !!= * `@CODE@` = 2. person dual
++1Pl !!= * `@CODE@` = 1. person plural
++2Pl !!= * `@CODE@` = 2. person plural
++3Pl !!= * `@CODE@` = 3. person plural
++1   !!= * `@CODE@` = ?
++2   !!= * `@CODE@` = ?
++3   !!= * `@CODE@` = ?
++Sg  !!= * `@CODE@` = Singular
++Pl  !!= * `@CODE@` = Plural
+
+!! Case:
++Nom
++Acc
++Gen
++Dat
+
+!! Gender:
++Fem
++Msc
++Neu
+
+!! Nominal inflection:
++Cmp
++Def
++Defkyn
++Superl
+
+!! Verbal inflection:
++Imp
++Ind
++Inf
++Middle
++PrfPrc
++Prs
++PrsPrc
++Prt
++Sbj
+
+!! Tags for later inclusion
++Num +Pers +Poss +Indef
+
+!! Other:
++IM
+
+ +Use/TTS          !!≈ * **@CODE@** – **only** retained in the HFST Text-To-Speech disambiguation tokeniser
+ +Use/-TTS         !!≈ * **@CODE@** – **never** retained in the HFST Text-To-Speech disambiguation tokeniser
+
+!! # Flag diacritics
+!! We have manually optimised the structure of our lexicon using following
+!! flag diacritics to restrict morhpological combinatorics.
+!! 
+!! ## Compounds with deverbal nouns
+!! 
+!! The basic idea is to only allow compounds
+!! with verbs if the verb is further derived into a noun again:
+!! 
+!! | Tag | Explanation
+!! | --- | ---
+ @P.NeedNoun.ON@    !!≈ | `@CODE@` | (Dis)allow compounds with verbs unless nominalised
+ @D.NeedNoun.ON@    !!≈ | `@CODE@` | (Dis)allow compounds with verbs unless nominalised
+ @C.NeedNoun@       !!≈ | `@CODE@` | (Dis)allow compounds with verbs unless nominalised
+!! 
+!! ## Controlling General Compounding
+!! 
+!! For languages that allow compounding, the following flag diacritics are needed
+!! to control position-based compounding restrictions for nominals. Their use is
+!! handled automatically if combined with +CmpN/xxx tags. If not used, they will
+!! do no harm.
+!! 
+!! | Tag | Explanation
+!! | --- | ---
+ @P.CmpFrst.FALSE@ !!≈ | `@CODE@` | Require that words tagged as such only appear first
+ @D.CmpPref.TRUE@  !!≈ | `@CODE@` | Block such words from entering ENDLEX
+ @P.CmpPref.FALSE@ !!≈ | `@CODE@` | Block these words from making further compounds
+ @D.CmpLast.TRUE@  !!≈ | `@CODE@` | Block such words from entering R
+ @D.CmpNone.TRUE@  !!≈ | `@CODE@` | Combines with the next tag to prohibit compounding
+ @U.CmpNone.FALSE@ !!≈ | `@CODE@` | Combines with the prev tag to prohibit compounding
+ @P.CmpOnly.TRUE@  !!≈ | `@CODE@` | Sets a flag to indicate that the word has passed R
+ @D.CmpOnly.FALSE@ !!≈ | `@CODE@` | Disallow words coming directly from root.
+!! 
+!! Use the following flag diacritics to control downcasing of derived proper
+!! nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
+!! these flags. There exists a ready-made regex that will do the actual down-casing
+!! given the proper use of these flags.
+!! 
+!! | Tag | Explanation
+!! | --- | ---
+ @U.Cap.Obl@        !!≈ | `@CODE@` | Allowing downcasing of derived names: deatnulasj.
+ @U.Cap.Opt@        !!≈ | `@CODE@` | Allowing downcasing of derived names: deatnulasj.
+
+LEXICON Root
+Nouns ;
+Verbs ;
+Adjectives ;
+Propernouns ;
+Closed ;
+Punctuation ;
+Symbols     ;
+
+LEXICON Closed
+
+ok+CC:ok  # "and; also; but; though; ok þó = although; ok þá = then" ;
+oc+CC:oc  # "(E Norse form) and; also; but; though; ok þó = although; ok þá = then" ;
+at+Cmp:at  # "who, that" ;
+at+CS:at  # "that, so that" ;
+at+IM:at  # "to" ;
+
+
+ek+Pron+1Sg+Nom:ek  # "I" ;
+ek+Pron+1Sg+Acc:mik  # "me" ;
+ek+Pron+1Sg+Gen:mín  # "my, mine" ;
+ek+Pron+1Sg+Dat:mér  # "to me" ;
+þú+Pron+2Sg+Nom:þú  # "you" ;
+þú+Pron+2Sg+Acc:þik  # "you" ;
+þú+Pron+2Sg+Gen:þín  # "your, yours" ;
+þú+Pron+2Sg+Dat:þér  # "to you" ;
+vit+Pron+1Du+Nom:vit  # "we two" ;
+vit+Pron+1Du+Acc:okkr  # "us two" ;
+vit+Pron+1Du+Gen:okkar  # "of us two" ;
+vit+Pron+1Du+Dat:okkr  # "to us two" ;
+it+Pron+2Du+Nom:it  # "you two" ;
+it+Pron+2Du+Acc:ykkr  # "you two" ;
+it+Pron+2Du+Gen:ykkar  # "of you two" ;
+it+Pron+2Du+Dat:ykkr  # "to you two" ;
+vér+Pron+1Pl+Nom:vér  # "we" ;
+vér+Pron+1Pl+Acc:oss  # "us" ;
+vér+Pron+1Pl+Gen:vár  # "our" ;
+vér+Pron+1Pl+Dat:oss  # "us" ;
+ér+Pron+2Pl+Nom:ér  # "you" ;
+ér+Pron+2Pl+Acc:yðr  # "you" ;
+ér+Pron+2Pl+Gen:yðar  # "your, yours" ;
+ér+Pron+2Pl+Dat:yðr  # "to you" ;
+du+Pron+2Du+Nom:þit  # "you two" ;
+þér+Pron+2Pl+Nom:þér  # "you (pl. nom.)" ;
+hann+Pron+3Sg+Msc+Nom:hann  # "" ;
+hann+Pron+3Sg+Msc+Acc:hann  # "" ;
+hann+Pron+3Sg+Msc+Nom:han  # "" ;
+hann+Pron+3Sg+Msc+Acc:han  # "" ;
+hann+Pron+3Sg+Msc+Gen:hans  # "" ;
+hann+Pron+3Sg+Msc+Dat:honum  # "" ;
+hon+Pron+3Sg+Fem+Nom:hon  # "" ;
+hon+Pron+3Sg+Fem+Acc:hana  # "" ;
+hon+Pron+3Sg+Fem+Gen:hennar  # "" ;
+hon+Pron+3Sg+Fem+Dat:henni  # "" ;
+þat+Pron+3Sg+Neu+Nom:þat  # "" ;
+þat+Pron+3Sg+Neu+Acc:þat  # "" ;
+þat+Pron+3Sg+Neu+Gen:þess  # "" ;
+þat+Pron+3Sg+Neu+Dat:því  # "" ;
+þeir+Pron+3Pl+Msc+Nom:þeir  # "" ;
+þeir+Pron+3Pl+Msc+Acc:þá  # "" ;
+þeir+Pron+3Pl+Msc+Gen:þeira  # "" ;
+þeir+Pron+3Pl+Msc+Dat:þeim  # "" ;
+þær+Pron+3Pl+Fem+Nom:þær  # "" ;
+þær+Pron+3Pl+Fem+Acc:þær  # "" ;
+þær+Pron+3Pl+Fem+Gen:þeira  # "" ;
+þær+Pron+3Pl+Fem+Dat:þeim  # "" ;
+þau+Pron+3Pl+Neu+Nom:þau  # "" ;
+þau+Pron+3Pl+Neu+Acc:þau  # "" ;
+þau+Pron+3Pl+Neu+Gen:þeira  # "" ;
+þau+Pron+3Pl+Neu+Dat:þeim  # "" ;
+þau+Pron+3Sg+Neu+Dat:þí  # "" ;
+hann+Pron+3Sg+Msc+Gen:þeirra  # "" ;
+hon+Pron+3Sg+Fem+Gen:þeirra  # "" ;
+it+Pron+3Sg+Neu+Gen:þeirra  # "" ;
+inn+Art+Sg+Msc+Nom:inn  # "the" ;
+inn+Art+Sg+Msc+Acc:inn  # "the" ;
+inn+Art+Sg+Msc+Gen:ins  # "the" ;
+inn+Art+Sg+Msc+Dat:inum  # "the" ;
+inn+Art+Pl+Msc+Nom:inir  # "the" ;
+inn+Art+Pl+Msc+Acc:ina  # "the" ;
+inn+Art+Pl+Msc+Gen:inna  # "the" ;
+inn+Art+Pl+Msc+Dat:inum  # "the" ;
+in+Art+Sg+Fem+Nom:in  # "the" ;
+in+Art+Sg+Fem+Acc:ina  # "the" ;
+in+Art+Sg+Fem+Gen:innar  # "the" ;
+in+Art+Sg+Fem+Dat:inni  # "the" ;
+in+Art+Pl+Fem+Nom:inar  # "the" ;
+in+Art+Pl+Fem+Acc:inar  # "the" ;
+in+Art+Pl+Fem+Gen:inna  # "the" ;
+in+Art+Pl+Fem+Dat:inum  # "the" ;
+it+Art+Sg+Neu+Nom:it  # "the" ;
+it+Art+Sg+Neu+Acc:it  # "the" ;
+it+Art+Sg+Neu+Gen:ins  # "the" ;
+it+Art+Sg+Neu+Dat:inu  # "the" ;
+it+Art+Pl+Neu+Nom:in  # "the" ;
+it+Art+Pl+Neu+Acc:in  # "the" ;
+it+Art+Pl+Neu+Gen:inna  # "the" ;
+it+Art+Pl+Neu+Dat:inum  # "the" ;
+sjá+Dem+Sg+Msc+Nom:sjá  # "this" ;
+þessi+Dem+Sg+Msc+Nom:þessi  # "this" ;
+þessi+Dem+Sg+Msc+Acc:þenna  # "this" ;
+þessi+Dem+Sg+Msc+Gen:þessa  # "this" ;
+þessi+Dem+Sg+Msc+Dat:þessum  # "this" ;
+þessi+Dem+Pl+Msc+Nom:þessir  # "this" ;
+þessi+Dem+Pl+Msc+Acc:þessa  # "this" ;
+þessi+Dem+Pl+Msc+Gen:þessa  # "this" ;
+þessi+Dem+Pl+Msc+Dat:þessum  # "this" ;
+sjá+Dem+Sg+Fem+Nom:sjá  # "this" ;
+þessi+Dem+Sg+Fem+Nom:þessi  # "this" ;
+þessi+Dem+Sg+Fem+Acc:þessa  # "this" ;
+þessi+Dem+Sg+Fem+Gen:þessar  # "this" ;
+þessi+Dem+Sg+Fem+Dat:þessi  # "this" ;
+þessi+Dem+Pl+Fem+Nom:þessar  # "this" ;
+þessi+Dem+Pl+Fem+Acc:þessar  # "this" ;
+þessi+Dem+Pl+Fem+Gen:þessa  # "this" ;
+þessi+Dem+Pl+Fem+Dat:þessum  # "this" ;
+þetta+Dem+Sg+Neu+Nom:þetta  # "this" ;
+þetta+Dem+Sg+Neu+Acc:þetta  # "this" ;
+þetta+Dem+Sg+Neu+Gen:þessa  # "this" ;
+þetta+Dem+Sg+Neu+Dat:þessu  # "this" ;
+þetta+Dem+Pl+Neu+Nom:þessi  # "this" ;
+þetta+Dem+Pl+Neu+Acc:þessi  # "this" ;
+þetta+Dem+Pl+Neu+Gen:þessa  # "this" ;
+þetta+Dem+Pl+Neu+Dat:þessum  # "this" ;
+
+af+Adv:af  # "off; (E Norse) waræ aff = be made of; (vera) af = be past; af því at = conj. because, for" ;
+af+Pr:af  # "with dat: out of, from, of, with, concerning, because of, through" ;
+ef+Cmp:ef  # "if, whether, lest" ;
+eigi+Adv:eigi  # "not" ;
+ekki+Adv:ekki  # "not, by no means" ;
+ekki+Pron:ekki  # "nothing" ;
+en+CS:en  # "but, and; than;when, if" ;
+eptir+Adv:eptir  # "afterwards, behind, back; vera eptir = remain behind; honum varð eptir = he (unintentionally) left behind; eptir (þat) er = conj. after" ;
+eptir+Prt:eptir  # "w. dat after, behind, for, to obtain, along, according to; w. acc after (time), in succession to, after the death of, in memory of; þar eptir = after it" ;
+eða+CC:eða  # "or, and, but" ;
+fram+Adv:fram  # "forward, on, away; fram ór = out of; i dalnum fram = in the upper part of the valley; fram í Hrafnkelsdal = to the upper part of Hrafnkelsdal; um fram = (w. acc) better than, surpassing" ;
+framar+Adv+Cmp:framar  # "ahead, further forward" ;
+fyr+Pr :fyr  # "alt form of fyrir" ;
+fyrir+Adv:fyrir  # "first, in front, ahead, present, to be found, in return, in retaliation, in the way, along the coast, beforehand" ;
+fyrir+Pr:fyrir  # "w. dat before, in front of, lying against one, in one's way, against, because of, for, for this reason, for benefit of; hyggr fyrir sér, bethinks himself; fyrir sér = of oneself; fyrir þér = on your hands; fyrir X = X ago; w acc. in front of, into the presence of, around, along, over, for, as, in exchange or compensation for, on behalf of, instead of, before (time), during; fyrir borð = overboard; þar fyrir = for it; " ;
+fyrr+Adv:fyrr # "earlier" ;
+hjá+Pr:hjá # ;
+í+Pr:í # ;
+með+Adv:með  # "along, with it, as well; með því at = inasmusch as, because" ;
+með+Pr:með  # "w. dat with, along with, using, by means of, among, along; þar meðr = as well, also; vera með = stay with; vera ilt með = it goes ill with; hvat's með = how goes it with; w. acc with, bringing, carrying; " ;
+meðr+Pr:meðr  # "alt form of með" ;
+mjǫk+Adv:mjǫk  # "much, very; mjǫk frá = far from" ;
+nú+Adv:nú  # "now" ;
+of+Adv:of  # "round (about)" ;
+of+Adv:of  # "too" ;
+of+Pr:of  # "w. dat over; w. acc over, across, through, around, about, because of, for, as regards, concerning, in, during; of veg = on his way" ;
+sem+CS:sem  # "as, as if, that, while, when, where; jafn...sem = equal to; with superl sem skjótast, sem lengst, as soon (long) as possible; hvat sem = whatever; þar sem = where, whereas" ;
+sem+Rel+Pron:sem  # "who, which" ;
+snemma+Adv:snemma  # "early" ;
+snimma+Adv:snimma  # "early" ;
+svá+Adv:svá  # "so, thus, in this way; thus, this; so (of degree); also, as well; svá..at so...that, in such wise that, in such wise as to; svá...sem = as if, now that, as (far) as" ;
+sát+Adv:svát  # "such that (see svá)" ;
+síðan+Adv:síðan  # "afterwards, since then; at síðan = in future" ;
+síðan+CS:síðan  # "since, because, as (sometimes in síðan er)" ;
+til+Adv:til  # "vera til = be obtainable; er þat til = this is to be done; til þess er, þil þess unz = conj. until; till þess at = in order to; þar til (er) = until" ;
+til+Pr:til  # "with gen: to, in, of, concerning, on, as, for, to obtain; gott til e-s = well off for; until (a time); hér til = up to now; þar til = to this end" ;
+um+Adv:um  # "round about, concerning this; hvat um var = what was going on; um sinnsakar = for this once" ;
+um+Pr:um  # "w. acc around, about, (all) over, in, past, through, over, across, as regards, in of, about, concerning, during or in (time); um stund = for a while; um þat er = when; kominn um langan veg = come from a long way off; um þveran háls = over the ridge; um þvert gólfit = across the hall; þar um = about this; hér um = about this; w. dat. um sumrum = in summer; " ;
+upp+Adv:upp  # "up; upp frá þessu = from now on" ;
+vel+Adv:vel  # "well, readily, easily, gladly; vel kominn = welcome; vel at sér = nobleminded; vel flestir = almost any, nearly all; vel hvat = everything" ;
+við+Adv:við  # "thereupon, back, against, at it; við innan = inside" ;
+við+Pr:við  # "with dat: reaching to, against, toward, at, with or against (a foe), in reply to, in exchange for; þar við = for it; w. acc (together) with, (in company) with, by, close to, against, upon, leaning against, towards, to meet, to, respecting, because of, upon perceiving, by means of, equal to, against or with (a foe), towards or at (a time), þar viðr = against it; er ... við = on which; við þat = for that purpose; " ;
+viðr+Pr:viðr  # "alt form of við" ;
+á+Adv:á  # "onward" ;
+á+Pr:á  # "with dat: on, upon; at, in, to, towards, by (means of); in the course of (time), in during, by; á þýsku = in German; with acc: to, towards, on to; in (a manner)" ;
+ór+Pr:ór  # "w. dat out of, from, of, using (material); vera ór = be made of; þar or = out of it" ;
+út+Adv:út  # "out, from abroad; fara út í lǫnd = go abroad" ;
+þar+Adv:þar # "there" ;
+þá+Adv:þá # "when" ;
+
+hverr+Interr+Nom+Msc+Fem:hverr  # "" ;
+hverr+Interr+Acc+Msc+Fem:hvern  # "" ;
+hverr+Interr+Gen+Msc+Fem:hvess  # "" ;
+hverr+Interr+Dat+Msc+Fem:hveim  # "" ;
+hvat+Interr+Nom+Neu:hvat  # "" ;
+hvat+Interr+Acc+Neu:hvat  # "" ;
+hvat+Interr+Gen+Neu:hvess  # "" ;
+hvat+Interr+Dat+Neu:hví  # "" ;
+vera+V+3Sg+Prs:es  # "is (archaic for er, i.e. is)" ;
+skykkja+N:skykkjum  # "dat+Pl" ;
+annarr+Msc+Sg+Nom:annarr  # "other" ;
+annarr+Msc+Sg+Acc:annan  # "other" ;
+annarr+Msc+Sg+Gen:annars  # "other" ;
+annarr+Msc+Sg+Dat:ǫðrum  # "other" ;
+annarr+Msc+Pl+Nom:aðrir  # "other" ;
+annarr+Msc+Pl+Acc:aðra  # "other" ;
+annarr+Msc+Pl+Gen:annarra  # "other" ;
+annarr+Msc+Pl+Dat:ǫðrum  # "other" ;
+annarr+Fem+Sg+Nom:ǫnnur  # "other" ;
+annarr+Fem+Sg+Acc:aðra  # "other" ;
+annarr+Fem+Sg+Gen:annarrar  # "other" ;
+annarr+Fem+Sg+Dat:annarri  # "other" ;
+annarr+Fem+Pl+Nom:aðrar  # "other" ;
+annarr+Fem+Pl+Acc:aðrar  # "other" ;
+annarr+Fem+Pl+Gen:annarra  # "other" ;
+annarr+Fem+Pl+Dat:ǫðrum  # "other" ;
+annarr+Neu+Sg+Nom:annat  # "other" ;
+annarr+Neu+Sg+Acc:annat  # "other" ;
+annarr+Neu+Sg+Gen:annars  # "other" ;
+annarr+Neu+Sg+Dat:ǫðrum  # "other" ;
+annarr+Neu+Pl+Nom:ǫnnur  # "other" ;
+annarr+Neu+Pl+Acc:ǫnnur  # "other" ;
+annarr+Neu+Pl+Gen:annarra  # "other" ;
+annarr+Neu+Pl+Dat:ǫðrum  # "other" ;
+sinn+Refl+Msc+Sg+Nom:sinn  # "one's own" ;
+sinn+Refl+Msc+Sg+Acc:sinn  # "one's own" ;
+sinn+Refl+Msc+Sg+Gen:síns  # "one's own" ;
+sinn+Refl+Msc+Sg+Dat:sínum  # "one's own" ;
+sinn+Refl+Msc+Pl+Nom:sínir  # "one's own" ;
+sinn+Refl+Msc+Pl+Acc:sína  # "one's own" ;
+sinn+Refl+Msc+Pl+Gen:sinna  # "one's own" ;
+sinn+Refl+Msc+Pl+Dat:sínum  # "one's own" ;
+sinn+Refl+Fem+Sg+Nom:sín  # "one's own" ;
+sinn+Refl+Fem+Sg+Acc:sína  # "one's own" ;
+sinn+Refl+Fem+Sg+Gen:sinnar  # "one's own" ;
+sinn+Refl+Fem+Sg+Dat:sinni  # "one's own" ;
+sinn+Refl+Fem+Pl+Nom:sínar  # "one's own" ;
+sinn+Refl+Fem+Pl+Acc:sínar  # "one's own" ;
+sinn+Refl+Fem+Pl+Gen:sinna  # "one's own" ;
+sinn+Refl+Fem+Pl+Dat:sínum  # "one's own" ;
+sinn+Refl+Neu+Sg+Nom:sitt  # "one's own" ;
+sinn+Refl+Neu+Sg+Acc:sitt  # "one's own" ;
+sinn+Refl+Neu+Sg+Gen:síns  # "one's own" ;
+sinn+Refl+Neu+Sg+Dat:sínu  # "one's own" ;
+sinn+Refl+Neu+Pl+Nom:sín  # "one's own" ;
+sinn+Refl+Neu+Pl+Acc:sín  # "one's own" ;
+sinn+Refl+Neu+Pl+Gen:sinna  # "one's own" ;
+sinn+Refl+Neu+Pl+Dat:sínum  # "one's own" ;
+minn+Msc+Sg+Nom:minn  # "my" ;
+minn+Msc+Sg+Acc:minn  # "my" ;
+minn+Msc+Sg+Gen:míns  # "my" ;
+minn+Msc+Sg+Dat:mínum  # "my" ;
+minn+Msc+Pl+Nom:mínir  # "my" ;
+minn+Msc+Pl+Acc:mína  # "my" ;
+minn+Msc+Pl+Gen:minna  # "my" ;
+minn+Msc+Pl+Dat:mínum  # "my" ;
+minn+Fem+Sg+Nom:mín  # "my" ;
+minn+Fem+Sg+Acc:mína  # "my" ;
+minn+Fem+Sg+Gen:minnar  # "my" ;
+minn+Fem+Sg+Dat:minni  # "my" ;
+minn+Fem+Pl+Nom:mínar  # "my" ;
+minn+Fem+Pl+Acc:mínar  # "my" ;
+minn+Fem+Pl+Gen:minna  # "my" ;
+minn+Fem+Pl+Dat:mínum  # "my" ;
+minn+Neu+Sg+Nom:mitt  # "my" ;
+minn+Neu+Sg+Acc:mitt  # "my" ;
+minn+Neu+Sg+Gen:míns  # "my" ;
+minn+Neu+Sg+Dat:mínu  # "my" ;
+minn+Neu+Pl+Nom:mín  # "my" ;
+minn+Neu+Pl+Acc:mín  # "my" ;
+minn+Neu+Pl+Gen:minna  # "my" ;
+minn+Neu+Pl+Dat:mínum  # "my" ;
+þinn+Msc+Sg+Nom:þinn  # "your (sg.)" ;
+þinn+Msc+Sg+Acc:þinn  # "your (sg.)" ;
+þinn+Msc+Sg+Gen:þíns  # "your (sg.)" ;
+þinn+Msc+Sg+Dat:þínum  # "your (sg.)" ;
+þinn+Msc+Pl+Nom:þínir  # "your (sg.)" ;
+þinn+Msc+Pl+Acc:þína  # "your (sg.)" ;
+þinn+Msc+Pl+Gen:þinna  # "your (sg.)" ;
+þinn+Msc+Pl+Dat:þínum  # "your (sg.)" ;
+þinn+Fem+Sg+Nom:þín  # "your (sg.)" ;
+þinn+Fem+Sg+Acc:þína  # "your (sg.)" ;
+þinn+Fem+Sg+Gen:þinnar  # "your (sg.)" ;
+þinn+Fem+Sg+Dat:þinni  # "your (sg.)" ;
+þinn+Fem+Pl+Nom:þínar  # "your (sg.)" ;
+þinn+Fem+Pl+Acc:þínar  # "your (sg.)" ;
+þinn+Fem+Pl+Gen:þinna  # "your (sg.)" ;
+þinn+Fem+Pl+Dat:þínum  # "your (sg.)" ;
+þinn+Neu+Sg+Nom:þitt  # "your (sg.)" ;
+þinn+Neu+Sg+Acc:þitt  # "your (sg.)" ;
+þinn+Neu+Sg+Gen:þíns  # "your (sg.)" ;
+þinn+Neu+Sg+Dat:þínu  # "your (sg.)" ;
+þinn+Neu+Pl+Nom:þín  # "your (sg.)" ;
+þinn+Neu+Pl+Acc:þín  # "your (sg.)" ;
+þinn+Neu+Pl+Gen:þinna  # "your (sg.)" ;
+þinn+Neu+Pl+Dat:þínum  # "your (sg.)" ;
+hér+Adv:hér  # "here; hér af = from here" ;
+áðr+Adv:áðr  # "before, first; " ;
+áðr+CS:áðr  # "aðr (en) = before, until" ;
+yfir+Pr:yfir  # "w. dat: above, over, at; w. acc: over, across, upon" ;
+sik+Refl+Acc+V+3:sik  # "oneself" ;
+sik+Refl+Gen+V+3:sín  # "oneself's" ;
+sik+Refl+Dat+V+3:sér  # "(to/for) oneself" ;
+ofan+Adv:ofan  # "downward, from above, southwards; ofan um knappinn = around the staff just below the knob; þar á ofan = in addition; fyrir ofan = prep. w. acc. over, above" ;
+enn+Adv:enn  # "still, again, further, moreover" ;
+aptr+Adv:aptr  # "back, aft" ;
+fast+Adv:fast  # "fast, strongly, hard; certainly" ;
+hvárt+Adv:hvárt  # "whether (can introduce direct questions); hvárt er = can it be?; hvárt er ... eða = whether ... or; hvárt sem ... eða = whether ... or" ;
+mikit+Adv:mikit  # "much" ;
+þannig+Adv:þannig  # "thither, in that way" ;
+þann+Adv:þann  # "then" ;
+seint+Adv:seint  # "slowly, coldly" ;
+enda+CS:enda  # "and indeed, moreover" ;
+einn+Msc+Nom:ein  # "one" ;
+einn+Msc+Gen:eins  # "one" ;
+einn+Msc+Dat:einum  # "one" ;
+einn+Msc+Acc:einn  # "one" ;
+einn+Fem+Nom:ein  # "one" ;
+einn+Fem+Gen:einnar  # "one" ;
+einn+Fem+Dat:einni  # "one" ;
+einn+Fem+Acc:eina  # "one" ;
+einn+Neu+Nom:eitt  # "one" ;
+einn+Neu+Gen:eins  # "one" ;
+einn+Neu+Dat:einu  # "one" ;
+einn+Neu+Acc:eitt  # "one" ;
+tveir+Msc+Nom:tveir  # "two" ;
+tveir+Msc+Gen:tveggja  # "two" ;
+tveir+Msc+Dat:tveim  # "two" ;
+tveir+Msc+Acc:tvá  # "two" ;
+tveir+Fem+Nom:tvær  # "two" ;
+tveir+Fem+Gen:tveggja  # "two" ;
+tveir+Fem+Dat:tveim  # "two" ;
+tveir+Fem+Acc:tvær  # "two" ;
+tveir+Neu+Nom:tvau  # "two" ;
+tveir+Neu+Gen:tveggja  # "two" ;
+tveir+Neu+Dat:tveim  # "two" ;
+tveir+Neu+Acc:tvau  # "two" ;
+tveir+Msc+Dat:tveimr  # "two" ;
+tveir+Fem+Dat:tveimr  # "two" ;
+tveir+Neu+Dat:tveimr  # "two" ;
+þrír+Msc+Nom:þrír  # "three" ;
+þrír+Msc+Gen:þriggja  # "three" ;
+þrír+Msc+Dat:þrim  # "three" ;
+þrír+Msc+Acc:þrjá  # "three" ;
+þrír+Fem+Nom:þrjár  # "three" ;
+þrír+Fem+Gen:þriggja  # "three" ;
+þrír+Fem+Dat:þrim  # "three" ;
+þrír+Fem+Acc:þrjár  # "three" ;
+þrír+Neu+Nom:þrjú  # "three" ;
+þrír+Neu+Gen:þriggja  # "three" ;
+þrír+Neu+Dat:þrim  # "three" ;
+þrír+Neu+Acc:þrjú  # "three" ;
+þrír+Msc+Dat:þrimr  # "three" ;
+þrír+Fem+Dat:þrimr  # "three" ;
+þrír+Neu+Dat:þrimr  # "three" ;
+fjórir+Msc+Nom:fjórir  # "four" ;
+fjórir+Msc+Gen:fjǫgurra  # "four" ;
+fjórir+Msc+Dat:fjórum  # "four" ;
+fjórir+Msc+Acc:fjóra  # "four" ;
+fjórir+Fem+Nom:fjórar  # "four" ;
+fjórir+Fem+Gen:fjǫgurra  # "four" ;
+fjórir+Fem+Dat:fjórum  # "four" ;
+fjórir+Fem+Acc:fjórar  # "four" ;
+fjórir+Neu+Nom:fjógur  # "four" ;
+fjórir+Neu+Gen:fjǫgurra  # "four" ;
+fjórir+Neu+Dat:fjórum  # "four" ;
+fjórir+Neu+Acc:fjógur  # "four" ;
+heim+Adv:heim  # "home; to(wards) the house" ;
+saman+Adv:saman  # "together" ;
+engi+Det+Msc+Nom+Sg:engi  # "no, none" ;
+engi+Det+Msc+Acc+Sg:engan  # "no, none" ;
+engi+Det+Msc+Gen+Sg:engis  # "no, none" ;
+engi+Det+Msc+Dat+Sg:engum  # "no, none" ;
+engi+Det+Msc+Nom+Pl:engir  # "no, none" ;
+engi+Det+Msc+Acc+Pl:enga  # "no, none" ;
+engi+Det+Msc+Gen+Pl:engra  # "no, none" ;
+engi+Det+Msc+Dat+Pl:engum  # "no, none" ;
+engi+Det+Fem+Nom+Sg:engi  # "no, none" ;
+engi+Det+Fem+Acc+Sg:enga  # "no, none" ;
+engi+Det+Fem+Gen+Sg:engrar  # "no, none" ;
+engi+Det+Fem+Dat+Sg:engri  # "no, none" ;
+engi+Det+Fem+Nom+Pl:engar  # "no, none" ;
+engi+Det+Fem+Acc+Pl:engar  # "no, none" ;
+engi+Det+Fem+Gen+Pl:engra  # "no, none" ;
+engi+Det+Fem+Dat+Pl:engum  # "no, none" ;
+engi+Det+Neu+Nom+Sg:ekki  # "no, none" ;
+engi+Det+Neu+Acc+Sg:ekki  # "no, none" ;
+engi+Det+Neu+Gen+Sg:engis  # "no, none" ;
+engi+Det+Neu+Dat+Sg:engu  # "no, none" ;
+engi+Det+Neu+Nom+Pl:engi  # "no, none" ;
+engi+Det+Neu+Acc+Pl:engi  # "no, none" ;
+engi+Det+Neu+Gen+Pl:engra  # "no, none" ;
+engi+Det+Neu+Dat+Pl:engum  # "no, none" ;
+engi+Det+Msc+Acc+Sg:engi  # "no, none" ;
+engi+Det+Msc+Gen+Sg:enskis  # "no, none" ;
+engi+Det+Neu+Gen+Sg:enskis  # "no, none" ;
+báðir+Det+Msc+Nom:báðir  # "both" ;
+báðir+Det+Msc+Acc:báða  # "both" ;
+báðir+Det+Msc+Gen:beggja  # "both" ;
+báðir+Det+Msc+Dat:báðum  # "both" ;
+báðir+Det+Fem+Nom:báðar  # "both" ;
+báðir+Det+Fem+Acc:báðar  # "both" ;
+báðir+Det+Fem+Gen:beggja  # "both" ;
+báðir+Det+Fem+Dat:báðum  # "both" ;
+báðir+Det+Neu+Nom:bæði  # "both" ;
+báðir+Det+Neu+Acc:bæði  # "both" ;
+báðir+Det+Neu+Gen:beggja  # "both" ;
+báðir+Det+Neu+Dat:báðum  # "both" ;
+nakkvarr+Msc+Nom+Sg:nakkvarr  # "some, any" ;
+nakkvarr+Msc+Acc+Sg:nakkvarn  # "some, any" ;
+nakkvarr+Msc+Gen+Sg:nakkvars  # "some, any" ;
+nakkvarr+Msc+Dat+Sg:nǫkkurum  # "some, any" ;
+nakkvarr+Msc+Nom+Pl:nakkvarir  # "some, any" ;
+nakkvarr+Msc+Acc+Pl:nakkvara  # "some, any" ;
+nakkvarr+Msc+Gen+Pl:nakkvarra  # "some, any" ;
+nakkvarr+Msc+Dat+Pl:nǫkkurum  # "some, any" ;
+nakkvarr+Fem+Nom+Sg:nǫkkur  # "some, any" ;
+nakkvarr+Fem+Acc+Sg:nakkvara  # "some, any" ;
+nakkvarr+Fem+Gen+Sg:nakkvarrar  # "some, any" ;
+nakkvarr+Fem+Dat+Sg:nakkvarri  # "some, any" ;
+nakkvarr+Fem+Nom+Pl:nakkvarar  # "some, any" ;
+nakkvarr+Fem+Acc+Pl:nakkvarar  # "some, any" ;
+nakkvarr+Fem+Gen+Pl:nakkvarra  # "some, any" ;
+nakkvarr+Fem+Dat+Pl:nǫkkurum  # "some, any" ;
+nakkvarr+Neu+Nom+Sg:nakkvat  # "some, any" ;
+nakkvarr+Neu+Acc+Sg:nakkvat  # "some, any" ;
+nakkvarr+Neu+Gen+Sg:nakkvars  # "some, any" ;
+nakkvarr+Neu+Dat+Sg:nǫkkuru  # "some, any" ;
+nakkvarr+Neu+Nom+Pl:nǫkkur  # "some, any" ;
+nakkvarr+Neu+Acc+Pl:nǫkkur  # "some, any" ;
+nakkvarr+Neu+Gen+Pl:nakkvarra  # "some, any" ;
+nakkvarr+Neu+Dat+Pl:nǫkkurum  # "some, any" ;
+nakkvarr+Msc+Nom+Sg:nǫkkurr  # "some, any" ;
+nakkvarr+Msc+Acc+Sg:nǫkkurn  # "some, any" ;
+nakkvarr+Msc+Gen+Sg:nǫkkurs  # "some, any" ;
+nakkvarr+Msc+Nom+Pl:nǫkkurir  # "some, any" ;
+nakkvarr+Msc+Acc+Pl:nǫkkura  # "some, any" ;
+nakkvarr+Msc+Gen+Pl:nǫkkurra  # "some, any" ;
+nakkvarr+Fem+Acc+Sg:nǫkkura  # "some, any" ;
+nakkvarr+Fem+Gen+Sg:nǫkkurrar  # "some, any" ;
+nakkvarr+Fem+Dat+Sg:nǫkkurri  # "some, any" ;
+nakkvarr+Fem+Nom+Pl:nǫkkurar  # "some, any" ;
+nakkvarr+Fem+Acc+Pl:nǫkkurar  # "some, any" ;
+nakkvarr+Fem+Gen+Pl:nǫkkurra  # "some, any" ;
+nakkvarr+Neu+Nom+Sg:nǫkkut  # "some, any" ;
+nakkvarr+Neu+Acc+Sg:nǫkkut  # "some, any" ;
+nakkvarr+Neu+Gen+Sg:nǫkkurs  # "some, any" ;
+nakkvarr+Neu+Gen+Pl:nǫkkurra  # "some, any" ;
+undir+Pr:undir  # "w. dat.: under, below; eiga undir sér = have in one's power, be able to manage; w. acc. under, up to, behind; niðr undir = down into" ;
+und+Pr:und  # "w. dat.: under, below; eiga undir sér = have in one's power, be able to manage; w. acc. under, up to, behind; niðr undir = down into" ;
+undan+Adv:undan  # "from under, away, (thrown) down" ;
+undan+Pr:undan  # "w. dat.: away from, out of" ;
+útan+Adv:útan  # "from without, externally, abroad (from Iceland/Greenland); um útan = around it" ;
+útan+Pr:útan  # "beyond, without, except; fyr útan = prep w. acc. outside, beyond" ;
+nær+Adv:nær  # "near, nearly, closely" ;
+nær+Cmp:nær  # "nearer; manni at nær = nearer to the help of man; " ;
+nær+Pr:nær  # "w. dat.: near" ;
+næst+Superl:næst  # "nearest; því næst = thereupon, next; þessu næst = after this; þat er nú þessu næst, at = the next event to be told is that" ;
+nær+CS:nær  # "(short for hvé nær) how soon, when, until" ;
+næsta+Adv:næsta  # "nearly; því var næsta = very nearly so" ;
+hversu+Adv:hversu  # "how, however" ;
+hvar+Interr:hvar  # "where, everywhere; hvar sem = wherever" ;
+litlu+Adv:litlu  # "a little" ;
+stórum+Adv:stórum  # "hugely" ;
+útar+Adv:útar  # "farther out" ;
+útarst+Adv:útarst  # "farthest out" ;
+þó+CS:þó  # "nevertheless, yet" ;
+er+CS:er  # "when; þá er = when, that, since, as" ;
+fúss+A:fúss  # "ready, eager" ;
+
+
+
+
+! prep+Dat     to, towards, against, close up to, at, in, by, from, according to, as regards, concerning, for, as, after, at/in (of time); vera at = to be busy at; at því er = how; at + infinitive = to, in order to; as adv = in this; w. compar = the:at  # "" 
