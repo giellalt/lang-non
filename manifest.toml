@@ -1,5 +1,5 @@
-name = "Old Norse"
-version = "0.1.2"
+spellername = "Old Norse"
+spellerversion = "0.1.2"
 
 # Name of the speller package in various languages.
 # The default is English + autonym:
