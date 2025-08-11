@@ -25,7 +25,7 @@ Multichar_Symbols  !!≈ # Definitions for @CODE@
 +CLB   !!≈ * `@CODE@` = Clause boundary mark
 +PUNCT !!≈ * `@CODE@` = Other punctuation
 +LEFT  !!≈ * `@CODE@` = Left part of paired punctuation
-+RIGHT !!≈ * `@CODE@` = Right part of paired punctuation
++RIGHT +MIDDLE !!≈ * `@CODE@` = Right part of paired punctuation
 
 !! Sub-POS and miscellaneous:
 +Dem    !!≈ * `@CODE@` = Demonstrative
