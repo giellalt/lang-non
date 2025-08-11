@@ -62,7 +62,7 @@ Punctuation:
 * `+CLB` = Clause boundary mark
 * `+PUNCT` = Other punctuation
 * `+LEFT` = Left part of paired punctuation
-* `+RIGHT` = Right part of paired punctuation
+* `+RIGHT +MIDDLE` = Right part of paired punctuation
 
 Sub-POS and miscellaneous:
 * `+Dem` = Demonstrative
