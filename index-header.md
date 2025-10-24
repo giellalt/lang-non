@@ -4,7 +4,8 @@
 ![Lemma count](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-non%2Fgh-pages%2Flemmacount.json)
 [![License](https://img.shields.io/github/license/giellalt/lang-non)](https://github.com/giellalt/lang-non/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-non)](https://github.com/giellalt/lang-non/issues)
-[![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-non/main/badge.svg)](https://github.com/giellalt/lang-non/actions)
+[![Build Status](https://builds.giellalt.org/api/badge/lang-non?label=CI)](https://builds.giellalt.org/pipelines/lang-non/builds/latest)
+[![Glottolog](https://img.shields.io/badge/Glottolog-green)](https://glottolog.org/resource/languoid/id/oldn1244)
 
 This page documents the work on the **[Old Norse language model](https://github.com/giellalt/lang-non)**. The language model is just a spelled-out paradigm of Old Norse paradigms, formatted in `lexc`. The model is large enough to be useful.
 
