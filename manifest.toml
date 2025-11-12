@@ -1,6 +1,3 @@
-spellername = "Old Norse"
-spellerversion = "0.1.2"
-
 # Name of the speller package in various languages.
 # The default is English + autonym:
 [speller.name]
@@ -22,3 +19,15 @@ legacy_product_codes = [
     { value = "A6FBC96F-0C35-40D7-B6DB-7585FA1B5AD4", kind = "nsis" },
     { value = "8C2E2284-51D2-472A-90ED-E536817923F8", kind = "nsis" }
 ]
+
+[package.speller]
+name = "Old Norse"
+version = "0.1.2"
+
+[package.grammar]
+name = "Old Norse"
+version = "0.1.0"
+
+[package.tts-text-proc]
+name = "Old Norse"
+version = "0.1.0"
