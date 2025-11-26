@@ -33,5 +33,5 @@ name = "Old Norse"
 version = "0.1.0"
 
 [package.hyphenator]
-name = "__UNDEFINED__"
+name = "Old Norse"
 version = "0.1.0"
